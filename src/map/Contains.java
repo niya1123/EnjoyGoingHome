@@ -20,7 +20,7 @@ public abstract class Contains {
 	
 	/**
 	 * フィールドnodePointのゲッター.
-	 * @return
+	 * @return nodePoint 優先度のための数
 	 */
 	public int getNodePoint() {
 		return nodePoint;

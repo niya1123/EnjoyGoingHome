@@ -11,8 +11,8 @@ public class CreateMap {
 	/**
 	 * Map生成のクラスメソッド.
 	 */
-	public static ArrayList<Map> createMap() {
-		ArrayList<Map> esc = new ArrayList<>();
+	public static ArrayList<Contains> createMap() {
+		ArrayList<Contains> esc = new ArrayList<>();
 		
 		return esc;
 	}

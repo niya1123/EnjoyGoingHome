@@ -9,7 +9,7 @@ public class TestMap {
 		for(int i = 0; i < esc.length; i++) {
 			for(int j = 0; j < esc[i].length; j++) {
 				esc[i][j].showInfo();
-				if( j == 4) System.out.println();
+				if( j == 4 ) System.out.println();
 			}
 		}
 	}

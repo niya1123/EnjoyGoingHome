@@ -20,4 +20,9 @@ public class Path extends Contains{
 		System.out.print("道 ");
 	}
 
+	@Override
+	public boolean isDetour(boolean flg) {
+		return flg;
+	}
+
 }

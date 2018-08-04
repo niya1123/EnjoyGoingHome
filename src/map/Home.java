@@ -19,4 +19,9 @@ public class Home extends Contains{
 		System.out.print("家 ");
 	}
 
+	@Override
+	public boolean isDetour(boolean flg) {
+		return flg;
+	}
+
 }

@@ -30,4 +30,10 @@ public abstract class Contains {
 	 * 家なら家と表示したりする.
 	 */
 	public abstract void showInfo();
+	
+	/**
+	 * 寄り道するかどうか判断するもの.
+	 * @return 寄り道するか否か.
+	 */
+	public abstract boolean isDetour(boolean flg);
 }

@@ -15,4 +15,9 @@ public class Path extends Contains{
 		super(nodePoint);
 	}
 
+	@Override
+	public void showInfo() {
+		System.out.print("道 ");
+	}
+
 }

@@ -25,4 +25,9 @@ public abstract class Contains {
 	public int getNodePoint() {
 		return nodePoint;
 	}
+	
+	/**
+	 * 家なら家と表示したりする.
+	 */
+	public abstract void showInfo();
 }

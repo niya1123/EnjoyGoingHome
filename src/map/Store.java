@@ -14,4 +14,8 @@ public class Store extends Contains{
 		super(nodePoint);
 	}
 
+	@Override
+	public void showInfo() {
+		System.out.print("店 ");
+	}
 }

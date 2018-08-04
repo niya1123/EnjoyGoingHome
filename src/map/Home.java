@@ -14,4 +14,9 @@ public class Home extends Contains{
 		super(nodePoint);
 	}
 
+	@Override
+	public void showInfo() {
+		System.out.print("家 ");
+	}
+
 }

@@ -1,7 +1,7 @@
 package map;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+//import java.util.HashMap;
 
 /**
  * Mapの生成
@@ -34,15 +34,15 @@ public class CreateMap {
 	 */
 	public static Contains[][] createmap(ArrayList<String> data){
 		Contains[][] map = new Contains[10][10];
-		String[] lineData;
-		HashMap<String, String> mapData = new HashMap<>();
-	
 		for(String line: data) {
-			lineData = line.split(" ");
+			String[] lineData = line.split(" ");
+			for(int i = 0; i < lineData.length; i++) {
+				System.out.print(lineData[i]);
+				if(i == 9) System.out.println();
+				
+			}
 		}
-		for(int i = 0; i < lineData.length; i++) {
-			
-		}
+		
 		return map;
 	}
 }

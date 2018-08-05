@@ -7,7 +7,7 @@ package map;
 public class Home extends Contains{
 	
 	/**
-	 * Homeのデフォルトのノード値は0とする.
+	 * Homeのノード値は固定で0とする.
 	 * @param nodePoint ノード値
 	 */
 	public Home(int nodePoint) {

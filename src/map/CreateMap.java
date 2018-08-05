@@ -1,5 +1,8 @@
 package map;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Mapの生成
  * @author YK
@@ -7,7 +10,7 @@ package map;
 public class CreateMap {
 	
 	/**
-	 * Map生成のクラスメソッド.
+	 * Map生成のクラスメソッド.テスト用.
 	 */
 	public static Contains[][] createmap(){
 		Contains[][] map = new Contains[4][5];
@@ -22,5 +25,25 @@ public class CreateMap {
 		map[3][4] = new Path(2);
 		return map;
 		
+	}
+	
+	/**
+	 * Map生成のクラスメソッド.txtファイルから情報を得る.
+	 * @param width 配列の横の長さ
+	 * @param var 配列の縦の長さ
+	 * @return map マップ
+	 */
+	public static Contains[][] createmap(ArrayList<String> data){
+		Contains[][] map = new Contains[10][10];
+		String[] lineData;
+		HashMap<String, String> mapData = new HashMap<>();
+	
+		for(String line: data) {
+			lineData = line.split(" ");
+		}
+		for(int i = 0; i < lineData.length; i++) {
+			
+		}
+		return map;
 	}
 }

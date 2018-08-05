@@ -1,5 +1,6 @@
 package testdrive;
 
+import data.ReadMap;
 import map.Contains;
 import map.CreateMap;
 
@@ -11,6 +12,10 @@ public class TestMap {
 				esc[i][j].showInfo();
 				if( j == 4 ) System.out.println();
 			}
+		}
+		
+		for(String line: ReadMap.readMap()) {
+			System.out.println(line);
 		}
 	}
 		

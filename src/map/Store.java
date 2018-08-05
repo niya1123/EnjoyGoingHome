@@ -21,7 +21,6 @@ public class Store extends Contains{
 
 	@Override
 	public boolean isDetour(boolean flg) {
-		
 		return flg;
 	}
 }

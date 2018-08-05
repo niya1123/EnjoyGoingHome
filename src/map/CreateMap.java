@@ -29,8 +29,7 @@ public class CreateMap {
 	
 	/**
 	 * Map生成のクラスメソッド.txtファイルから情報を得る.
-	 * @param width 配列の横の長さ
-	 * @param var 配列の縦の長さ
+	 * @param data txtから読み出されたdata
 	 * @return map マップ
 	 */
 	public static Contains[][] createmap(ArrayList<String> data){

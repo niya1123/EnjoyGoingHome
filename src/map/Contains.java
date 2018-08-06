@@ -27,6 +27,14 @@ public abstract class Contains {
 	}
 	
 	/**
+	 * nodePointのセッター
+	 * @param nodePoint 優先度のための数
+	 */
+	public void setNodePoint(int nodePoint) {
+		this.nodePoint = nodePoint;
+	}
+	
+	/**
 	 * 家なら家と表示したりする.
 	 */
 	public abstract void showInfo();

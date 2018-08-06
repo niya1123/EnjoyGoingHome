@@ -49,8 +49,8 @@ public class CreateMap {
 		
 		//map[][]にアルファベットに対応したオブジェクトを生成, 代入
 		int k=0;
-		for(int i=0; i<9; i++){
-			for(int j=0; j<9; j++){
+		for(int i=0; i<10; i++){
+			for(int j=0; j<10; j++){
 				if(temp.get(k).equals("H")) map[i][j] = new Home(0);
 				else if(temp.get(k).equals("P")) map[i][j] = new Path(0);
 				else if(temp.get(k).equals("S")) map[i][j] = new Store(0);
@@ -59,6 +59,7 @@ public class CreateMap {
 					System.out.println("mapに無効な値が指定されました");
 					System.exit(0);
 				}
+				k++;
 			}
 		}
 		

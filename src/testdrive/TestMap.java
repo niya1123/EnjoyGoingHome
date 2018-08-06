@@ -22,7 +22,13 @@ public class TestMap {
 		
 		System.out.println();
 		System.out.println("createmap(data)のテスト");
-		CreateMap.createmap(ReadMap.readMap());
+		Contains[][] esc2 = CreateMap.createmap(ReadMap.readMap());
+		for(int i = 0; i < esc2.length; i++) {
+			for(int j = 0; j < esc2[i].length; j++) {
+				esc2[i][j].showInfo();
+				if( j == 9 ) System.out.println();
+			}
+		}
 	}
 		
 }

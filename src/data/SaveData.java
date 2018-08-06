@@ -2,6 +2,9 @@ package data;
 
 import java.util.ArrayList;
 
+import map.Contains;
+import map.CreateMap;
+
 /**
  * 各種データを保持するクラス.
  * @author YK
@@ -9,12 +12,12 @@ import java.util.ArrayList;
 public class SaveData {
 	
 	/**
-	 * ReadMapのゲッター
-	 * @param name　map?.txtの？の部分
-	 * @return　ファイルから読み込んだArrayList
+	 * CreateMapMapのゲッター
+	 * @param data ファイルから読み込んだArrayList
+	 * @return　Mapのオブジェクト群
 	 */
-	public ArrayList<String> getReadMap(String name){
-		return ReadMap.readMap(name);
+	public Contains[][] getReadMap(ArrayList<String> data){
+		return CreateMap.createmap(data);
 	}
 	
 }

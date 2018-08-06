@@ -11,6 +11,11 @@ public abstract class Contains {
 	private int nodePoint;
 	
 	/**
+	 * 寄り道するか否かを判断するためのもの.
+	 */
+	protected boolean detour;
+	
+	/**
 	 * 家,道,店,駅はコンストラクタの引数に渡される数によって優先度が決まる.
 	 * @param nodePoint 優先度のための数
 	 */
@@ -43,5 +48,11 @@ public abstract class Contains {
 	 * 寄り道するかどうか判断するもの.
 	 * @return 寄り道するか否か.
 	 */
-	public abstract boolean isDetour(boolean flg);
+	public abstract boolean isDetour();
+	
+	/**
+	 * 寄り道のセッター
+	 * @param flg
+	 */
+	public abstract void setDetour(boolean flg);
 }

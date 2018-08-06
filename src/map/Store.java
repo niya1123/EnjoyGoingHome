@@ -20,7 +20,12 @@ public class Store extends Contains{
 	}
 
 	@Override
-	public boolean isDetour(boolean flg) {
-		return flg;
+	public boolean isDetour() {
+		return detour;
+	}
+
+	@Override
+	public void setDetour(boolean flg) {
+		this.detour  = flg;
 	}
 }

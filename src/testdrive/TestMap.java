@@ -2,6 +2,7 @@ package testdrive;
 
 import java.util.Scanner;
 
+import data.CalcRoute;
 import data.ReadMap;
 import map.Contains;
 import map.CreateMap;
@@ -35,6 +36,21 @@ public class TestMap {
 				if( j == 9 ) System.out.println();
 			}
 		}
+		
+		System.out.println();
+		System.out.println("CalcRouteのテスト");
+		//home以外のStationとStoreが寄り道するか否かを納めた配列
+		boolean[] isDetour = {true, false};
+		CalcRoute calcRoute = new CalcRoute();
+		Contains[][] esc3 = calcRoute.calcRoute(isDetour, ReadMap.readMap(name));
+		for(int i = 0; i < esc3.length; i ++) {
+			for(int j = 0; j < esc3[i].length; j++) {
+				if(esc3[i][j].isDetour()) System.out.print("t");
+				esc3[i][j].showInfo();
+				if( j == 9 ) System.out.println();
+			}
+		}
+		
 	}
 		
 }

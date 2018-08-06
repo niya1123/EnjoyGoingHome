@@ -20,8 +20,12 @@ public class Station extends Contains{
 	}
 
 	@Override
-	public boolean isDetour(boolean flg) {
-		return flg;
+	public boolean isDetour() {
+		return detour;
+	}
+
+	public void setDetour(boolean flg) {
+		this.detour = flg;
 	}
 
 }

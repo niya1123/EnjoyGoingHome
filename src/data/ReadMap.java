@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public class ReadMap {
 	
-	public static ArrayList<String> readMap(){
+	public static ArrayList<String> readMap(String name){
 		ArrayList<String> data = new ArrayList<>();
-		Path path = Paths.get("./src/data/map.txt");
+		Path path = Paths.get("./src/data/" + "map" + name + ".txt");
 		try(BufferedReader reader = Files.newBufferedReader(path)){
 			String line;
 			while((line = reader.readLine()) != null) {

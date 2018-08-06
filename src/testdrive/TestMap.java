@@ -1,5 +1,7 @@
 package testdrive;
 
+import java.util.Scanner;
+
 import data.ReadMap;
 import map.Contains;
 import map.CreateMap;
@@ -16,13 +18,17 @@ public class TestMap {
 		}
 		System.out.println();
 		System.out.println("ReadMapのテスト");
-		for(String line: ReadMap.readMap()) {
+		System.out.print("mapを選択してください: ");
+		Scanner sc = new Scanner(System.in);
+		String name = sc.next();
+		sc.close();
+		for(String line: ReadMap.readMap(name)) {
 			System.out.println(line);
 		}
 		
 		System.out.println();
 		System.out.println("createmap(data)のテスト");
-		Contains[][] esc2 = CreateMap.createmap(ReadMap.readMap());
+		Contains[][] esc2 = CreateMap.createmap(ReadMap.readMap(name));
 		for(int i = 0; i < esc2.length; i++) {
 			for(int j = 0; j < esc2[i].length; j++) {
 				esc2[i][j].showInfo();

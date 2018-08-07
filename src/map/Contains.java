@@ -62,4 +62,11 @@ public abstract class Contains {
 	 * @param flg
 	 */
 	public abstract void setDetour(boolean flg);
+
+	/**
+	 * フィールドtypeのgetPathメソッド用
+	 */
+	public String getPath() {
+		return type.getPath();
+	}
 }

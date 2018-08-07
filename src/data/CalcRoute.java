@@ -61,12 +61,13 @@ public class CalcRoute {
 		//距離の最大値
 		int range;
 		
+		int orderCount=1;
+		
 		//isDetourの数だけループ
 		while(true){
 			startY=0;
 			startX=0;
 			range=0;
-			int orderCount=1;
 			
 			for(int i=0; i<esc.length; i++){
 				for(int j=0; j<esc[i].length; j++){

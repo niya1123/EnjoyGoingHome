@@ -44,8 +44,24 @@ public class TestCalcRoute {
 			}
 		}
 		
+		System.out.println("かるくルートするまえ---------------<");
+		for(int i = 0; i < esc.length; i++) {
+			for(int j = 0; j < esc[i].length; j++) {
+				System.out.printf("|%2d", esc[i][j].getOrder());
+				if( j == 9 ) System.out.println("|");
+			}
+		}
+		
+		
+		System.out.println("かるくルートしたあと---------------<");
 		esc = calcRoute.calcRoute(esc);
-		System.out.println("かるくルートしたあと");
+		for(int i = 0; i < esc.length; i++) {
+			for(int j = 0; j < esc[i].length; j++) {
+				System.out.printf("|%2d", esc[i][j].getOrder());
+				if( j == 9 ) System.out.println("|");
+			}
+		}
+		
 	}
 
 }

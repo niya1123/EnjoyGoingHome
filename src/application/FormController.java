@@ -168,6 +168,7 @@ public class FormController implements Initializable{
 				 //Image image= new Image(getClass().getResourceAsStream(map[i][j].getPath()));
 				Image image = new Image(ContainsTypes.class.getSimpleName().getClass().getResourceAsStream(map[i][j].getPath()));
 				mapImages[i][j]= new ImageView(image);
+				mapImages[i][j].setImage(image);
 				System.out.println("map["+i+"]["+j+"] is set");
 
 			}

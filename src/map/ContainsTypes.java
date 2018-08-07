@@ -10,10 +10,10 @@ public enum ContainsTypes {
 	 * 各種列挙要素に、対応する画像ファイルのパスをもたせる。
 	 */
 
-	HOME("/pic/path.jpg"),
+	HOME("/pic/home.png"),
 	PATH("/pic/path.jpg"),
-	STATIOM("/pic/path.jpg"),
-	STORE("/pic/path.jpg");
+	STATIOM("/pic/station.jpg"),
+	STORE("/pic/store.png");
 
 	private String path;
 

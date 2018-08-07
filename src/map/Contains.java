@@ -21,13 +21,13 @@ public abstract class Contains {
 	 * @author kei
 	 */
 	protected ContainsTypes type;
-	
+
 	/**
 	 * 順番を保持するフィールド
 	 * @author obt
 	 */
 	protected int order;
-	
+
 	/**
 	 * 初期値はfalse
 	 * 探索済みだとtrueになる
@@ -90,7 +90,7 @@ public abstract class Contains {
 	public void setOrder(int order){
 		this.order = order;
 	}
-	
+
 	/**
 	 * orderのゲッター
 	 * @return int型order 順番
@@ -99,14 +99,14 @@ public abstract class Contains {
 	public int getOrder(){
 		return order;
 	}
-	
+
 	/**
 	 * isVisitedのセッター
 	 */
 	public void setVisited(boolean bool){
 		this.isVisited=bool;
 	}
-	
+
 	/**
 	 * isVisitedのゲッター
 	 * @return isVisited
@@ -120,6 +120,9 @@ public abstract class Contains {
 	 */
 	public String getPath() {
 		return type.getPath();
+	}
 
+	public ContainsTypes getType() {
+		return type;
 	}
 }

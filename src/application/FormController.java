@@ -13,8 +13,8 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import map.Contains;
-import map.ContainsTypes;
 import map.CreateMap;
+import resource.ResourceLoader;
 /**
  * GUI処理部
  * MAP生成や検索条件のオンオフを管理
@@ -163,12 +163,34 @@ public class FormController implements Initializable{
 	 * 別クラスで投げられたContainsクラスのオブジェクト軍から、マップを生成、描写する
 	 */
 	public void drawMap(Contains[][] map) {
+		Image imagePath = new Image(ResourceLoader.getInstance().getResourceStreamPath());
+		Image imageHome = new Image(ResourceLoader.getInstance().getResourceStreamHome());
+		Image imageStation = new Image(ResourceLoader.getInstance().getResourceStreamStation());
+		Image imageStore = new Image(ResourceLoader.getInstance().getResourceStreamStore());
+
+		System.out.println(imagePath +"\n"+ imageHome +"\n"+ imageStation + "\n"+ imageStore);
 		for(int i= 0; i< map.length; i++) {
 			for(int j= 0; j< map[i].length; j++) {
-				 //Image image= new Image(getClass().getResourceAsStream(map[i][j].getPath()));
-				Image image = new Image(ContainsTypes.class.getSimpleName().getClass().getResourceAsStream(map[i][j].getPath()));
-				mapImages[i][j]= new ImageView(image);
-				mapImages[i][j].setImage(image);
+//				 Image image= new Image(getClass().getResourceAsStream(map[i][j].getPath()));
+				mapImages[i][j]= new ImageView();
+
+				switch(map[i][j].getType()) {
+				case HOME:
+					mapImages[i][j].setImage(imageHome);
+					break;
+				case STATION:
+					mapImages[i][j].setImage(imageStation);
+					break;
+				case STORE:
+					mapImages[i][j].setImage(imageStore);
+					break;
+				case PATH:
+				default:
+					mapImages[i][j].setImage(imagePath);
+					break;
+
+				}
+
 				System.out.println("map["+i+"]["+j+"] is set");
 
 			}

@@ -12,7 +12,7 @@ public class Station extends Contains{
 	 */
 	public Station(int nodePoint) {
 		super(nodePoint);
-		super.type= ContainsTypes.STATIOM;
+		super.type= ContainsTypes.STATION;
 	}
 
 	@Override

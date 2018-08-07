@@ -16,7 +16,7 @@ public class CalcRoute {
 	}
 	
 	public Contains[][] setDetour(ArrayList<String> data, ArrayList<Boolean> isStationDetour, ArrayList<Boolean> isStoreDetour){
-		Contains[][] esc = saveData.getReadMap(data); 
+		Contains[][] esc = saveData.getCreateMap(data); 
 		int e = 0;
 		int s = 0;
 		for(int i = 0; i < esc.length; i++) {

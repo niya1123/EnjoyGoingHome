@@ -18,7 +18,7 @@ public enum ContainsTypes {
 
 	private ContainsTypes(String path) {
 		// TODO 自動生成されたコンストラクター・スタブ
-		this.path= path;
+		this.path = path;
 	}
 
 	/**

@@ -2,9 +2,11 @@ package data;
 
 import java.util.ArrayList;
 
+import com.sun.java.swing.plaf.gtk.resources.gtk_it;
 
 import data.SaveData;
 import map.Contains;
+import map.Home;
 import map.Station;
 import map.Store;
 
@@ -56,18 +58,19 @@ public class CalcRoute {
 		}
 		
 		//始点の座標
-		int startY;
-		int startX;
+		int startY=0;
+		int startX=0;
 		//距離の最大値
-		int range;
+		int range=0;
 		
-		int orderCount=1;
+		//初期位置
+		esc[startY][startX].setOrder(1);
+		
+		int orderCount=2;
+		
 		
 		//isDetourの数だけループ
 		while(true){
-			startY=0;
-			startX=0;
-			range=0;
 			
 			for(int i=0; i<esc.length; i++){
 				for(int j=0; j<esc[i].length; j++){
@@ -83,10 +86,23 @@ public class CalcRoute {
 				}
 			}
 			
+//			System.out.println(orderCount);
 			orderCount++;
+			
+			
 			count--;
 			if(count<=0) break;
 		}
+		
+		//家に最後のorderを設定
+		for(int i=0; i<esc.length; i++){
+			for(int j=0; j<esc[i].length; j++){
+				if(esc[i][j] instanceof Home){
+					esc[i][j].setOrder(orderCount);
+				}
+			}
+		}
+		
 		return esc;
 	}
 	

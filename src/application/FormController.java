@@ -1,8 +1,19 @@
 package application;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import data.ReadMap;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import map.Contains;
+import map.CreateMap;
 /**
  * GUI処理部
  * MAP生成や検索条件のオンオフを管理
@@ -10,7 +21,7 @@ import map.Contains;
  * @author kei
  *
  */
-public class FormController {
+public class FormController implements Initializable{
 	@FXML public ImageView map00;
 	@FXML public ImageView map01;
 	@FXML public ImageView map02;
@@ -121,6 +132,18 @@ public class FormController {
 	@FXML public ImageView map98;
 	@FXML public ImageView map99;
 
+
+	@FXML public Button button_reload;
+
+	@FXML public RadioButton radio_map1;
+	@FXML public RadioButton radio_map2;
+	@FXML public RadioButton radio_map3;
+	@FXML public RadioButton radio_map4;
+	@FXML public RadioButton radio_map5;
+
+	@FXML public ToggleGroup mapSelection;
+
+
 	/**
 	 * ImageView の２次元配列
 	 */
@@ -139,7 +162,14 @@ public class FormController {
 	 * 別クラスで投げられたContainsクラスのオブジェクト軍から、マップを生成、描写する
 	 */
 	public void drawMap(Contains[][] map) {
+		for(int i= 0; i< map.length; i++) {
+			for(int j= 0; j< map[i].length; j++) {
+				Image image= new Image(getClass().getResourceAsStream(map[i][j].getPath()));
+				mapImages[i][j].setImage(image);
 
+
+			}
+		}
 	}
 
 	/**
@@ -148,6 +178,24 @@ public class FormController {
 	public void drawRoute() {
 
 	}
+
+	@FXML
+	public void onReloadClicked(ActionEvent e) {
+
+	}
+
+	/**
+	 * 起動時の初期化
+	 */
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO 自動生成されたメソッド・スタブ
+		drawMap(CreateMap.createmap(ReadMap.readMap("1")));
+
+
+	}
+
+
 
 
 

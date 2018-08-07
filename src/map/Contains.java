@@ -80,7 +80,7 @@ public abstract class Contains {
 	public void setDetour(boolean flg) {
 		this.detour = flg;
 	}
-	
+
 	/**
 	 * orderのセッター
 	 * @param order 順番
@@ -112,5 +112,12 @@ public abstract class Contains {
 	 */
 	public boolean getVisited(){
 		return this.isVisited;
+	}
+
+	/**
+	 * フィールドtypeのgetPathメソッド用
+	 */
+	public String getPath() {
+		return type.getPath();
 	}
 }

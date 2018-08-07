@@ -9,16 +9,16 @@ public enum ContainsTypes {
 	/**
 	 * 各種列挙要素に、対応する画像ファイルのパスをもたせる。
 	 */
-	HOME("./src/pic/home.png"),
-	PATH("./src/pic/path.png"),
-	STATIOM("./src/pic/station.png"),
-	STORE("./src/pic/store.png");
+	HOME("/pic/home.png"),
+	PATH("/pic/path.jpg"),
+	STATIOM("/pic/station.png"),
+	STORE("/pic/store.png");
 
 	private String path;
 
 	private ContainsTypes(String path) {
 		// TODO 自動生成されたコンストラクター・スタブ
-		this.path= path;
+		this.path = path;
 	}
 
 	/**

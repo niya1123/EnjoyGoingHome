@@ -63,7 +63,7 @@
               </rowConstraints>
                <children>
                <!--1行目  -->
-                  <ImageView fx:id="map00" fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="map00" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="map01" fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
                   <ImageView fx:id="map02" fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
                   <ImageView fx:id="map03" fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />

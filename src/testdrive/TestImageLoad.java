@@ -1,7 +1,5 @@
 package testdrive;
 
-import java.nio.file.Paths;
-
 import javafx.scene.image.Image;
 import map.ContainsTypes;
 
@@ -19,8 +17,14 @@ public class TestImageLoad {
 
 
 	private void load() {
-		System.out.println(Paths.get(ContainsTypes.PATH.getPath()).toUri().toString());
-		Image imagePath= new Image(Paths.get(ContainsTypes.PATH.getPath()).toUri().toString());
+
+
+//		System.out.println(ContainsTypes.class.getName());
+//		System.out.println(ContainsTypes.class.getSimpleName().getClass().getResourceAsStream("/pic/path.jpg"));
+//		System.out.println(ContainsTypes.class.getResourceAsStream("./src/pic/path.jpg"));
+//		Image imagePath= new Image(ContainsTypes.class.getSimpleName().getClass().getResourceAsStream(ContainsTypes.PATH.getPath()));
+		Image imagePath = new Image(ContainsTypes.class.getSimpleName().getClass().getResourceAsStream(ContainsTypes.PATH.getPath()));
+
 		if(imagePath != null) {
 			System.out.println("notnull");
 		}

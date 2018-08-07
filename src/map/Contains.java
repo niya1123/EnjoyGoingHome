@@ -59,20 +59,18 @@ public abstract class Contains {
 		return detour;
 	}
 
-
-
-	/**
-	 * フィールドtypeのgetPathメソッド用
-	 */
-	public String getPath() {
-		return type.getPath();
-	}
-
 	/**
 	 * 寄り道のセッター
 	 * @param flg
 	 */
 	public void setDetour(boolean flg) {
 		this.detour = flg;
+	}
+	/**
+	 * フィールドtypeのgetPathメソッド用
+	 */
+	public String getPath() {
+		return type.getPath();
+
 	}
 }

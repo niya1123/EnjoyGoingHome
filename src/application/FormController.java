@@ -3,13 +3,17 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import data.ReadMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import map.Contains;
+import map.CreateMap;
 /**
  * GUI処理部
  * MAP生成や検索条件のオンオフを管理
@@ -131,6 +135,15 @@ public class FormController implements Initializable{
 
 	@FXML public Button button_reload;
 
+	@FXML public RadioButton radio_map1;
+	@FXML public RadioButton radio_map2;
+	@FXML public RadioButton radio_map3;
+	@FXML public RadioButton radio_map4;
+	@FXML public RadioButton radio_map5;
+
+	@FXML public ToggleGroup mapSelection;
+
+
 	/**
 	 * ImageView の２次元配列
 	 */
@@ -151,8 +164,9 @@ public class FormController implements Initializable{
 	public void drawMap(Contains[][] map) {
 		for(int i= 0; i< map.length; i++) {
 			for(int j= 0; j< map[i].length; j++) {
-				Image image= new Image(map[i][j].getPath());
+				Image image= new Image(getClass().getResourceAsStream(map[i][j].getPath()));
 				mapImages[i][j].setImage(image);
+
 
 			}
 		}
@@ -176,6 +190,8 @@ public class FormController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO 自動生成されたメソッド・スタブ
+		drawMap(CreateMap.createmap(ReadMap.readMap("1")));
+
 
 	}
 

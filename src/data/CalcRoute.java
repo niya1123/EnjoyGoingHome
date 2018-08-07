@@ -90,7 +90,6 @@ public class CalcRoute {
 			
 			orderCount++;
 			
-			
 			count--;
 			if(count<=0) break;
 		}

@@ -5,13 +5,15 @@ package map;
  * @author YK
  */
 public class Home extends Contains{
-	
+
+
 	/**
 	 * Homeのノード値は固定で0とする.
 	 * @param nodePoint ノード値
 	 */
 	public Home(int nodePoint) {
 		super(nodePoint);
+		super.type= ContainsTypes.HOME;
 	}
 
 	@Override
@@ -27,7 +29,7 @@ public class Home extends Contains{
 	@Override
 	public void setDetour(boolean flg) {
 		this.detour = flg;
-		
+
 	}
 
 }

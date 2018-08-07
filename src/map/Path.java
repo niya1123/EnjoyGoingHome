@@ -5,7 +5,8 @@ package map;
  * @author YK
  */
 public class Path extends Contains{
-	
+
+
 	/**
 	 * Pathのデフォルトのノード値は1とする.
 	 * 最大10を設定.
@@ -13,6 +14,7 @@ public class Path extends Contains{
 	 */
 	public Path(int nodePoint) {
 		super(nodePoint);
+		super.type= ContainsTypes.PATH;
 	}
 
 	@Override

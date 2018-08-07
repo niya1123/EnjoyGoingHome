@@ -2,6 +2,7 @@ package application;
 
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import map.Contains;
 /**
  * GUI処理部
  * MAP生成や検索条件のオンオフを管理
@@ -137,7 +138,7 @@ public class FormController {
 	/**
 	 * 別クラスで投げられたContainsクラスのオブジェクト軍から、マップを生成、描写する
 	 */
-	public void drawMap() {
+	public void drawMap(Contains[][] map) {
 
 	}
 

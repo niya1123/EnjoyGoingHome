@@ -13,8 +13,8 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import map.Contains;
+import map.ContainsTypes;
 import map.CreateMap;
-import resource.ResourceLoader;
 /**
  * GUI処理部
  * MAP生成や検索条件のオンオフを管理
@@ -23,132 +23,152 @@ import resource.ResourceLoader;
  *
  */
 public class FormController implements Initializable{
-	@FXML public ImageView map00;
-	@FXML public ImageView map01;
-	@FXML public ImageView map02;
-	@FXML public ImageView map03;
-	@FXML public ImageView map04;
-	@FXML public ImageView map05;
-	@FXML public ImageView map06;
-	@FXML public ImageView map07;
-	@FXML public ImageView map08;
-	@FXML public ImageView map09;
+	@FXML
+	private ImageView map00= new ImageView();
+	@FXML
+	private ImageView map01= new ImageView();
+	@FXML
+	private ImageView map02= new ImageView();
+	@FXML
+	private ImageView map03= new ImageView();
+	@FXML
+	private ImageView map04= new ImageView();
+	@FXML
+	private ImageView map05= new ImageView();
+	@FXML
+	private ImageView map06= new ImageView();
+	@FXML
+	private ImageView map07= new ImageView();
+	@FXML
+	private ImageView map08= new ImageView();
+	@FXML
+	private ImageView map09= new ImageView();
 
-	@FXML public ImageView map10;
-	@FXML public ImageView map11;
-	@FXML public ImageView map12;
-	@FXML public ImageView map13;
-	@FXML public ImageView map14;
-	@FXML public ImageView map15;
-	@FXML public ImageView map16;
-	@FXML public ImageView map17;
-	@FXML public ImageView map18;
-	@FXML public ImageView map19;
+	@FXML
+	private ImageView map10= new ImageView();
+	@FXML
+	private ImageView map11= new ImageView();
+	@FXML
+	private ImageView map12= new ImageView();
+	@FXML
+	private ImageView map13= new ImageView();
+	@FXML
+	private ImageView map14= new ImageView();
+	@FXML
+	private ImageView map15= new ImageView();
+	@FXML
+	private ImageView map16= new ImageView();
+	@FXML
+	private ImageView map17= new ImageView();
+	@FXML
+	private ImageView map18= new ImageView();
+	@FXML
+	private ImageView map19= new ImageView();
 
-	@FXML public ImageView map20;
-	@FXML public ImageView map21;
-	@FXML public ImageView map22;
-	@FXML public ImageView map23;
-	@FXML public ImageView map24;
-	@FXML public ImageView map25;
-	@FXML public ImageView map26;
-	@FXML public ImageView map27;
-	@FXML public ImageView map28;
-	@FXML public ImageView map29;
+	@FXML private ImageView map20= new ImageView();
+	@FXML private ImageView map21= new ImageView();
+	@FXML private ImageView map22= new ImageView();
+	@FXML private ImageView map23= new ImageView();
+	@FXML private ImageView map24= new ImageView();
+	@FXML private ImageView map25= new ImageView();
+	@FXML private ImageView map26= new ImageView();
+	@FXML private ImageView map27= new ImageView();
+	@FXML private ImageView map28= new ImageView();
+	@FXML private ImageView map29= new ImageView();
 
-	@FXML public ImageView map30;
-	@FXML public ImageView map31;
-	@FXML public ImageView map32;
-	@FXML public ImageView map33;
-	@FXML public ImageView map34;
-	@FXML public ImageView map35;
-	@FXML public ImageView map36;
-	@FXML public ImageView map37;
-	@FXML public ImageView map38;
-	@FXML public ImageView map39;
+	@FXML private ImageView map30= new ImageView();
+	@FXML private ImageView map31= new ImageView();
+	@FXML private ImageView map32= new ImageView();
+	@FXML private ImageView map33= new ImageView();
+	@FXML private ImageView map34= new ImageView();
+	@FXML private ImageView map35= new ImageView();
+	@FXML private ImageView map36= new ImageView();
+	@FXML private ImageView map37= new ImageView();
+	@FXML private ImageView map38= new ImageView();
+	@FXML private ImageView map39= new ImageView();
 
-	@FXML public ImageView map40;
-	@FXML public ImageView map41;
-	@FXML public ImageView map42;
-	@FXML public ImageView map43;
-	@FXML public ImageView map44;
-	@FXML public ImageView map45;
-	@FXML public ImageView map46;
-	@FXML public ImageView map47;
-	@FXML public ImageView map48;
-	@FXML public ImageView map49;
+	@FXML private ImageView map40= new ImageView();
+	@FXML private ImageView map41= new ImageView();
+	@FXML private ImageView map42= new ImageView();
+	@FXML private ImageView map43= new ImageView();
+	@FXML private ImageView map44= new ImageView();
+	@FXML private ImageView map45= new ImageView();
+	@FXML private ImageView map46= new ImageView();
+	@FXML private ImageView map47= new ImageView();
+	@FXML private ImageView map48= new ImageView();
+	@FXML private ImageView map49= new ImageView();
 
-	@FXML public ImageView map50;
-	@FXML public ImageView map51;
-	@FXML public ImageView map52;
-	@FXML public ImageView map53;
-	@FXML public ImageView map54;
-	@FXML public ImageView map55;
-	@FXML public ImageView map56;
-	@FXML public ImageView map57;
-	@FXML public ImageView map58;
-	@FXML public ImageView map59;
+	@FXML private ImageView map50= new ImageView();
+	@FXML private ImageView map51= new ImageView();
+	@FXML private ImageView map52= new ImageView();
+	@FXML private ImageView map53= new ImageView();
+	@FXML private ImageView map54= new ImageView();
+	@FXML private ImageView map55= new ImageView();
+	@FXML private ImageView map56= new ImageView();
+	@FXML private ImageView map57= new ImageView();
+	@FXML private ImageView map58= new ImageView();
+	@FXML private ImageView map59= new ImageView();
 
-	@FXML public ImageView map60;
-	@FXML public ImageView map61;
-	@FXML public ImageView map62;
-	@FXML public ImageView map63;
-	@FXML public ImageView map64;
-	@FXML public ImageView map65;
-	@FXML public ImageView map66;
-	@FXML public ImageView map67;
-	@FXML public ImageView map68;
-	@FXML public ImageView map69;
+	@FXML private ImageView map60= new ImageView();
+	@FXML private ImageView map61= new ImageView();
+	@FXML private ImageView map62= new ImageView();
+	@FXML private ImageView map63= new ImageView();
+	@FXML private ImageView map64= new ImageView();
+	@FXML private ImageView map65= new ImageView();
+	@FXML private ImageView map66= new ImageView();
+	@FXML private ImageView map67= new ImageView();
+	@FXML private ImageView map68= new ImageView();
+	@FXML private ImageView map69= new ImageView();
 
-	@FXML public ImageView map70;
-	@FXML public ImageView map71;
-	@FXML public ImageView map72;
-	@FXML public ImageView map73;
-	@FXML public ImageView map74;
-	@FXML public ImageView map75;
-	@FXML public ImageView map76;
-	@FXML public ImageView map77;
-	@FXML public ImageView map78;
-	@FXML public ImageView map79;
+	@FXML private ImageView map70= new ImageView();
+	@FXML private ImageView map71= new ImageView();
+	@FXML private ImageView map72= new ImageView();
+	@FXML private ImageView map73= new ImageView();
+	@FXML private ImageView map74= new ImageView();
+	@FXML private ImageView map75= new ImageView();
+	@FXML private ImageView map76= new ImageView();
+	@FXML private ImageView map77= new ImageView();
+	@FXML private ImageView map78= new ImageView();
+	@FXML private ImageView map79= new ImageView();
 
-	@FXML public ImageView map80;
-	@FXML public ImageView map81;
-	@FXML public ImageView map82;
-	@FXML public ImageView map83;
-	@FXML public ImageView map84;
-	@FXML public ImageView map85;
-	@FXML public ImageView map86;
-	@FXML public ImageView map87;
-	@FXML public ImageView map88;
-	@FXML public ImageView map89;
+	@FXML private ImageView map80 = new ImageView();
+	@FXML private ImageView map81= new ImageView();
+	@FXML private ImageView map82= new ImageView();
+	@FXML private ImageView map83= new ImageView();
+	@FXML private ImageView map84= new ImageView();
+	@FXML private ImageView map85= new ImageView();
+	@FXML private ImageView map86= new ImageView();
+	@FXML private ImageView map87= new ImageView();
+	@FXML private ImageView map88= new ImageView();
+	@FXML private ImageView map89= new ImageView();
 
-	@FXML public ImageView map90;
-	@FXML public ImageView map91;
-	@FXML public ImageView map92;
-	@FXML public ImageView map93;
-	@FXML public ImageView map94;
-	@FXML public ImageView map95;
-	@FXML public ImageView map96;
-	@FXML public ImageView map97;
-	@FXML public ImageView map98;
-	@FXML public ImageView map99;
+	@FXML private ImageView map90= new ImageView();
+	@FXML private ImageView map91= new ImageView();
+	@FXML private ImageView map92= new ImageView();
+	@FXML private ImageView map93= new ImageView();
+	@FXML private ImageView map94= new ImageView();
+	@FXML private ImageView map95= new ImageView();
+	@FXML private ImageView map96= new ImageView();
+	@FXML private ImageView map97= new ImageView();
+	@FXML private ImageView map98= new ImageView();
+	@FXML private ImageView map99= new ImageView();
 
 
-	@FXML public Button button_reload;
+	@FXML private Button button_reload;
 
-	@FXML public RadioButton radio_map1;
-	@FXML public RadioButton radio_map2;
-	@FXML public RadioButton radio_map3;
-	@FXML public RadioButton radio_map4;
-	@FXML public RadioButton radio_map5;
+	@FXML private RadioButton radio_map1;
+	@FXML private RadioButton radio_map2;
+	@FXML private RadioButton radio_map3;
+	@FXML private RadioButton radio_map4;
+	@FXML private RadioButton radio_map5;
 
-	@FXML public ToggleGroup mapSelection;
+	@FXML private ToggleGroup mapSelection;
 
 
 	/**
 	 * ImageView の２次元配列
 	 */
-	public ImageView[][] mapImages= {{map00, map01, map02, map03, map04, map05, map06, map07, map08, map09},
+	private ImageView[][] mapImages= {{map00, map01, map02, map03, map04, map05, map06, map07, map08, map09},
 									{map10, map11, map12, map13, map14, map15, map16, map17, map18, map19},
 									{map20, map21, map22, map23, map24, map25, map26, map27, map28, map29},
 									{map30, map31, map32, map33, map34, map35, map36, map37, map38, map39},
@@ -163,16 +183,23 @@ public class FormController implements Initializable{
 	 * 別クラスで投げられたContainsクラスのオブジェクト軍から、マップを生成、描写する
 	 */
 	public void drawMap(Contains[][] map) {
-		Image imagePath = new Image(ResourceLoader.getInstance().getResourceStreamPath());
-		Image imageHome = new Image(ResourceLoader.getInstance().getResourceStreamHome());
-		Image imageStation = new Image(ResourceLoader.getInstance().getResourceStreamStation());
-		Image imageStore = new Image(ResourceLoader.getInstance().getResourceStreamStore());
+//		Image imagePath = new Image(ResourceLoader.getInstance().getResourceStreamPath());
+//		Image imageHome = new Image(ResourceLoader.getInstance().getResourceStreamHome());
+//		Image imageStation = new Image(ResourceLoader.getInstance().getResourceStreamStation());
+//		Image imageStore = new Image(ResourceLoader.getInstance().getResourceStreamStore());
+		System.out.println(ContainsTypes.PATH.getPath());
+		Image imagePath = new Image(ContainsTypes.PATH.getPath());
+		Image imageHome = new Image(ContainsTypes.HOME.getPath());
+		Image imageStation = new Image(ContainsTypes.STATION.getPath());
+		Image imageStore = new Image(ContainsTypes.STORE.getPath());
+
 
 		System.out.println(imagePath +"\n"+ imageHome +"\n"+ imageStation + "\n"+ imageStore);
 		for(int i= 0; i< map.length; i++) {
 			for(int j= 0; j< map[i].length; j++) {
 //				 Image image= new Image(getClass().getResourceAsStream(map[i][j].getPath()));
-				mapImages[i][j]= new ImageView();
+				//mapImages[i][j]= new ImageView();
+
 
 				switch(map[i][j].getType()) {
 				case HOME:
@@ -190,8 +217,9 @@ public class FormController implements Initializable{
 					break;
 
 				}
+				mapImages[i][j].setVisible(true);
 
-				System.out.println("map["+i+"]["+j+"] is set");
+				System.out.println("map["+i+"]["+j+"] is set: "+ map[i][j]);
 
 			}
 		}

@@ -77,7 +77,8 @@ public class TestMap {
 		
 		System.out.println("calcRouteのテスト");
 		System.out.println("orderを表示");
-		
+		TestCalcRoute testmap = new TestCalcRoute();
+		testmap.main(null);
 	}
 		
 }

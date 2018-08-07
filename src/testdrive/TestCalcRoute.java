@@ -16,7 +16,7 @@ public class TestCalcRoute {
 		/**
 		 * map1を読み込んで表示
 		 */
-		Contains[][] esc = CreateMap.createmap(ReadMap.readMap("1"));
+		Contains[][] esc = CreateMap.createmap(ReadMap.readMap("6"));
 		for(int i = 0; i < esc.length; i++) {
 			for(int j = 0; j < esc[i].length; j++) {
 				esc[i][j].showInfo();
@@ -35,7 +35,7 @@ public class TestCalcRoute {
 			}
 		}
 		CalcRoute calcRoute = new CalcRoute();
-		esc = calcRoute.setDetour(ReadMap.readMap("1"), isDetour, isDetour);
+		esc = calcRoute.setDetour(ReadMap.readMap("6"), isDetour, isDetour);
 		for(int i = 0; i < esc.length; i ++) {
 			for(int j = 0; j < esc[i].length; j++) {
 				if(esc[i][j].isDetour()) System.out.print("t");

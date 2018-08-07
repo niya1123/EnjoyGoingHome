@@ -166,8 +166,10 @@ public class FormController implements Initializable{
 
 
 	/**
-	 * ImageView の1次元配列
+	 * マップの番号を保持
+	 * 初期値は"1"
 	 */
+	private String currentNum= "1";
 
 
 
@@ -337,7 +339,31 @@ public class FormController implements Initializable{
 
 	@FXML
 	public void onReloadClicked(ActionEvent e) {
-		
+		drawMap(CreateMap.createmap(ReadMap.readMap(currentNum)));
+	}
+
+	/**
+	 * マップの種類をせんたくするラジオボタンの処理メソッド
+	 */
+	@FXML
+	public void handleRadio() {
+		if(radio_map1.isSelected()) {
+			currentNum= "1";
+		}
+		else if(radio_map2.isSelected()) {
+			currentNum= "2";
+		}
+		else if(radio_map3.isSelected()) {
+			currentNum= "3";
+		}
+		else if(radio_map4.isSelected()) {
+			currentNum= "4";
+		}
+		else if(radio_map5.isSelected()) {
+			currentNum= "5";
+		}
+
+		System.out.println("Select map: "+ currentNum);
 	}
 
 	/**
@@ -346,7 +372,7 @@ public class FormController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO 自動生成されたメソッド・スタブ
-		drawMap(CreateMap.createmap(ReadMap.readMap("1")));
+		drawMap(CreateMap.createmap(ReadMap.readMap(currentNum)));
 
 
 	}

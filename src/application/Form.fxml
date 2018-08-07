@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FormController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="780.0">
@@ -159,15 +158,15 @@
                   <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="130.0" prefWidth="100.0" />
                   <VBox prefHeight="102.0" prefWidth="100.0">
                      <children>
-                        <RadioButton fx:id="radio_map1" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" selected="true" text="Map:1">
+                        <RadioButton fx:id="radio_map1" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleRadio" prefHeight="20.0" prefWidth="100.0" selected="true" text="Map:1">
                            <toggleGroup>
                               <ToggleGroup fx:id="mapSelection" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="radio_map2" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" text="Map:2" toggleGroup="$mapSelection" />
-                        <RadioButton fx:id="radio_map3" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" text="Map:3" toggleGroup="$mapSelection" />
-                        <RadioButton fx:id="radio_map4" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" text="Map:4" toggleGroup="$mapSelection" />
-                        <RadioButton fx:id="radio_map5" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" text="Map:5" toggleGroup="$mapSelection" />
+                        <RadioButton fx:id="radio_map2" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleRadio" prefHeight="20.0" prefWidth="100.0" text="Map:2" toggleGroup="$mapSelection" />
+                        <RadioButton fx:id="radio_map3" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleRadio" prefHeight="20.0" prefWidth="100.0" text="Map:3" toggleGroup="$mapSelection" />
+                        <RadioButton fx:id="radio_map4" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleRadio" prefHeight="20.0" prefWidth="100.0" text="Map:4" toggleGroup="$mapSelection" />
+                        <RadioButton fx:id="radio_map5" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleRadio" prefHeight="20.0" prefWidth="100.0" text="Map:5" toggleGroup="$mapSelection" />
                      </children>
                      <padding>
                         <Insets left="10.0" />

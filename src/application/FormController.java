@@ -1,6 +1,13 @@
 package application;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import map.Contains;
 /**
@@ -10,7 +17,7 @@ import map.Contains;
  * @author kei
  *
  */
-public class FormController {
+public class FormController implements Initializable{
 	@FXML public ImageView map00;
 	@FXML public ImageView map01;
 	@FXML public ImageView map02;
@@ -121,6 +128,9 @@ public class FormController {
 	@FXML public ImageView map98;
 	@FXML public ImageView map99;
 
+
+	@FXML public Button button_reload;
+
 	/**
 	 * ImageView の２次元配列
 	 */
@@ -139,7 +149,13 @@ public class FormController {
 	 * 別クラスで投げられたContainsクラスのオブジェクト軍から、マップを生成、描写する
 	 */
 	public void drawMap(Contains[][] map) {
+		for(int i= 0; i< map.length; i++) {
+			for(int j= 0; j< map[i].length; j++) {
+				Image image= new Image(map[i][j].getPath());
+				mapImages[i][j].setImage(image);
 
+			}
+		}
 	}
 
 	/**
@@ -148,6 +164,22 @@ public class FormController {
 	public void drawRoute() {
 
 	}
+
+	@FXML
+	public void onReloadClicked(ActionEvent e) {
+
+	}
+
+	/**
+	 * 起動時の初期化
+	 */
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+
 
 
 

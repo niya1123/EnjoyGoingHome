@@ -16,7 +16,7 @@ public class SaveData {
 	 * @param data ファイルから読み込んだArrayList
 	 * @return　Mapのオブジェクト群
 	 */
-	public Contains[][] getReadMap(ArrayList<String> data){
+	public Contains[][] getCreateMap(ArrayList<String> data){
 		return CreateMap.createmap(data);
 	}
 	

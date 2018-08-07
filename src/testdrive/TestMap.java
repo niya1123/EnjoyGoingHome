@@ -75,6 +75,15 @@ public class TestMap {
 			}
 		}
 		
+		System.out.println("calcRouteのテスト");
+		System.out.println("orderを表示");
+		for(int i = 0; i < esc3.length; i ++) {
+			for(int j = 0; j < esc3[i].length; j++) {
+				System.out.print(esc[i][6].getOrder()+" ");
+//				esc3[i][j].showInfo();
+				if( j == 9 ) System.out.println();
+			}
+		}
 	}
 		
 }

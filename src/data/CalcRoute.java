@@ -2,6 +2,9 @@ package data;
 
 import java.util.ArrayList;
 
+import com.sun.corba.se.impl.orbutil.graph.Node;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
+
 import data.SaveData;
 import map.Contains;
 import map.Station;
@@ -16,7 +19,7 @@ public class CalcRoute {
 	}
 	
 	public Contains[][] setDetour(ArrayList<String> data, ArrayList<Boolean> isStationDetour, ArrayList<Boolean> isStoreDetour){
-		Contains[][] esc = saveData.getReadMap(data); 
+		Contains[][] esc = saveData.getCreateMap(data); 
 		int e = 0;
 		int s = 0;
 		for(int i = 0; i < esc.length; i++) {
@@ -35,15 +38,69 @@ public class CalcRoute {
 		
 	}
 	
-//	public Contains[][] calcRoute(/*boolean[] isDetours,*/ ArrayList<String> data) {
-//		Contains[][] esc = saveData.getReadMap(data); 
-////		for(int i = 0; i < esc.length; i++) {
-////			for(int j = 0; j < esc[i].length; j++) {
-////				if(esc[i][j] instanceof Station) esc[i][j].setDetour(isDetours[0]);
-////				if(esc[i][j] instanceof Store) esc[i][j].setDetour(isDetours[1]);
-////			}
-////		}
-//		
-//		return esc;
-//	}
+	/**
+	 * ルートを計算するメソッド
+	 * @param startY 初期値点の行の添字
+	 * @param startX 初期値点の列の添字
+	 * @param data 通る点をtrueにした２次元配列
+	 * @return 新たに順序を代入した２次元配列を返す
+	 * @author obata
+	 */
+	public Contains[][] calcRoute(ArrayList<String> data) {
+		Contains[][] esc = saveData.getCreateMap(data);
+		
+		//通り道の数(isDetourの数)
+		int count=0;
+		for(int i=0; i<esc.length; i++){
+			for(int j=0; j<esc[i].length; j++){
+				if(esc[i][j].isDetour()) count++;
+			}
+		}
+		
+		//始点の座標
+		int startY;
+		int startX;
+		//距離の最大値
+		int range;
+		
+		//isDetourの数だけループ
+		while(true){
+			startY=0;
+			startX=0;
+			range=0;
+			int orderCount=1;
+			
+			for(int i=0; i<esc.length; i++){
+				for(int j=0; j<esc[i].length; j++){
+					if(esc[i][j].isDetour() && !esc[i][j].getVisited()){
+						if( range < calcRange(startY, startX, i, j) ){
+							range = calcRange(startY, startX, i, j);
+							startY = i;
+							startX = j;
+						}
+					}
+					esc[startY][startX].setOrder(orderCount);
+					esc[startY][startX].setVisited(true);
+				}
+			}
+			
+			orderCount++;
+			count--;
+			if(count<=0) break;
+		}
+		return esc;
+	}
+	
+	
+	/**
+	 * ノード間の距離を計算するメソッド
+	 * @param aX  １つ目のノードのj
+	 * @param aY    １つ目のノードのi
+	 * @param bX  ２つ目のノードのj
+	 * @param bY    ２つ目のノードのi
+	 */
+	public int calcRange(int aY, int aX, int bY, int bX){
+		
+		return 0;
+	}
 }

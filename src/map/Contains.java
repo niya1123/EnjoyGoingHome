@@ -21,6 +21,19 @@ public abstract class Contains {
 	 * @author kei
 	 */
 	protected ContainsTypes type;
+	
+	/**
+	 * 順番を保持するフィールド
+	 * @author obt
+	 */
+	protected int order;
+	
+	/**
+	 * 初期値はfalse
+	 * 探索済みだとtrueになる
+	 * @author obt
+	 */
+	protected boolean isVisited;
 
 	/**
 	 * 家,道,店,駅はコンストラクタの引数に渡される数によって優先度が決まる.
@@ -28,6 +41,7 @@ public abstract class Contains {
 	 */
 	public Contains(int nodePoint) {
 		this.nodePoint = nodePoint;
+		this.order = 0;
 	}
 
 	/**
@@ -65,5 +79,38 @@ public abstract class Contains {
 	 */
 	public void setDetour(boolean flg) {
 		this.detour = flg;
+	}
+	
+	/**
+	 * orderのセッター
+	 * @param order 順番
+	 * @author obata
+	 */
+	public void setOrder(int order){
+		this.order = order;
+	}
+	
+	/**
+	 * orderのゲッター
+	 * @return int型order 順番
+	 * @author obata
+	 */
+	public int getOrder(){
+		return order;
+	}
+	
+	/**
+	 * isVisitedのセッター
+	 */
+	public void setVisited(boolean bool){
+		this.isVisited=bool;
+	}
+	
+	/**
+	 * isVisitedのゲッター
+	 * @return isVisited
+	 */
+	public boolean getVisited(){
+		return this.isVisited;
 	}
 }

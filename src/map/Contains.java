@@ -81,6 +81,7 @@ public abstract class Contains {
 		this.detour = flg;
 	}
 
+
 	/**
 	 * orderのセッター
 	 * @param order 順番
@@ -119,5 +120,6 @@ public abstract class Contains {
 	 */
 	public String getPath() {
 		return type.getPath();
+
 	}
 }

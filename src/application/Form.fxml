@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="534.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FormController">
+   <top>
+      <GridPane prefHeight="59.0" prefWidth="772.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="693.0" minWidth="10.0" prefWidth="561.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="382.0" minWidth="10.0" prefWidth="212.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button layoutX="100.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" />
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="37.0" prefWidth="489.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
+         </children>
+      </GridPane>
+   </top>
+   <left>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <CheckBox mnemonicParsing="false" text="検索要素1" />
+            <CheckBox mnemonicParsing="false" text="検索要素2" />
+            <CheckBox mnemonicParsing="false" text="検索要素3" />
+            <CheckBox mnemonicParsing="false" text="検索要素4" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="413.0" prefWidth="561.0" BorderPane.alignment="TOP_LEFT">
+         <center>
+            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="5.0" />
+
+
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+
+              </rowConstraints>
+               <children>
+                  <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                  <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                  <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </center>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

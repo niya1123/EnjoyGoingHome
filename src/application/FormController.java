@@ -166,63 +166,166 @@ public class FormController implements Initializable{
 
 
 	/**
-	 * ImageView の２次元配列
+	 * ImageView の1次元配列
 	 */
-	private ImageView[][] mapImages= {{map00, map01, map02, map03, map04, map05, map06, map07, map08, map09},
-									{map10, map11, map12, map13, map14, map15, map16, map17, map18, map19},
-									{map20, map21, map22, map23, map24, map25, map26, map27, map28, map29},
-									{map30, map31, map32, map33, map34, map35, map36, map37, map38, map39},
-									{map40, map41, map42, map43, map44, map45, map46, map47, map48, map49},
-									{map50, map51, map52, map53, map54, map55, map56, map57, map58, map59},
-									{map60, map61, map62, map63, map64, map65, map66, map67, map68, map69},
-									{map70, map71, map72, map73, map74, map75, map76, map77, map78, map79},
-									{map80, map81, map82, map83, map84, map85, map86, map87, map88, map89},
-									{map90, map91, map92, map93, map94, map95, map96, map97, map98, map99}} ;
+
+
 
 	/**
 	 * 別クラスで投げられたContainsクラスのオブジェクト軍から、マップを生成、描写する
 	 */
 	public void drawMap(Contains[][] map) {
-//		Image imagePath = new Image(ResourceLoader.getInstance().getResourceStreamPath());
-//		Image imageHome = new Image(ResourceLoader.getInstance().getResourceStreamHome());
-//		Image imageStation = new Image(ResourceLoader.getInstance().getResourceStreamStation());
-//		Image imageStore = new Image(ResourceLoader.getInstance().getResourceStreamStore());
 		System.out.println(ContainsTypes.PATH.getPath());
 		Image imagePath = new Image(ContainsTypes.PATH.getPath());
 		Image imageHome = new Image(ContainsTypes.HOME.getPath());
 		Image imageStation = new Image(ContainsTypes.STATION.getPath());
 		Image imageStore = new Image(ContainsTypes.STORE.getPath());
-
-
-		System.out.println(imagePath +"\n"+ imageHome +"\n"+ imageStation + "\n"+ imageStore);
-		for(int i= 0; i< map.length; i++) {
-			for(int j= 0; j< map[i].length; j++) {
-//				 Image image= new Image(getClass().getResourceAsStream(map[i][j].getPath()));
-				//mapImages[i][j]= new ImageView();
-
-
-				switch(map[i][j].getType()) {
-				case HOME:
-					mapImages[i][j].setImage(imageHome);
-					break;
-				case STATION:
-					mapImages[i][j].setImage(imageStation);
-					break;
-				case STORE:
-					mapImages[i][j].setImage(imageStore);
-					break;
-				case PATH:
-				default:
-					mapImages[i][j].setImage(imagePath);
-					break;
-
-				}
-				mapImages[i][j].setVisible(true);
-
-				System.out.println("map["+i+"]["+j+"] is set: "+ map[i][j]);
-
+		Contains contains[] = new Contains[100];
+		for(int i= 0; i< 10; i++) {
+			for(int j= 0; j< 10; j++) {
+				contains[(i*10)+j]= map[i][j];
 			}
 		}
+
+		System.out.println(imagePath +"\n"+ imageHome +"\n"+ imageStation + "\n"+ imageStore);
+
+		/**
+		 * 100個のImageViewを一つひとつ更新。もっと他に良い手段はなかったのだろうか...
+		 */
+		map00.setImage(containsToImage(contains[0]));
+		map01.setImage(containsToImage(contains[1]));
+		map02.setImage(containsToImage(contains[2]));
+		map03.setImage(containsToImage(contains[3]));
+		map04.setImage(containsToImage(contains[4]));
+		map05.setImage(containsToImage(contains[5]));
+		map06.setImage(containsToImage(contains[6]));
+		map07.setImage(containsToImage(contains[7]));
+		map08.setImage(containsToImage(contains[8]));
+		map09.setImage(containsToImage(contains[9]));
+
+		map10.setImage(containsToImage(contains[10]));
+		map11.setImage(containsToImage(contains[11]));
+		map12.setImage(containsToImage(contains[12]));
+		map13.setImage(containsToImage(contains[13]));
+		map14.setImage(containsToImage(contains[14]));
+		map15.setImage(containsToImage(contains[15]));
+		map16.setImage(containsToImage(contains[16]));
+		map17.setImage(containsToImage(contains[17]));
+		map18.setImage(containsToImage(contains[18]));
+		map19.setImage(containsToImage(contains[19]));
+
+		map20.setImage(containsToImage(contains[20]));
+		map21.setImage(containsToImage(contains[21]));
+		map22.setImage(containsToImage(contains[22]));
+		map23.setImage(containsToImage(contains[23]));
+		map24.setImage(containsToImage(contains[24]));
+		map25.setImage(containsToImage(contains[25]));
+		map26.setImage(containsToImage(contains[26]));
+		map27.setImage(containsToImage(contains[27]));
+		map28.setImage(containsToImage(contains[28]));
+		map29.setImage(containsToImage(contains[29]));
+
+		map30.setImage(containsToImage(contains[30]));
+		map31.setImage(containsToImage(contains[31]));
+		map32.setImage(containsToImage(contains[32]));
+		map33.setImage(containsToImage(contains[33]));
+		map34.setImage(containsToImage(contains[34]));
+		map35.setImage(containsToImage(contains[35]));
+		map36.setImage(containsToImage(contains[36]));
+		map37.setImage(containsToImage(contains[37]));
+		map38.setImage(containsToImage(contains[38]));
+		map39.setImage(containsToImage(contains[39]));
+
+		map40.setImage(containsToImage(contains[40]));
+		map41.setImage(containsToImage(contains[41]));
+		map42.setImage(containsToImage(contains[42]));
+		map43.setImage(containsToImage(contains[43]));
+		map44.setImage(containsToImage(contains[44]));
+		map45.setImage(containsToImage(contains[45]));
+		map46.setImage(containsToImage(contains[46]));
+		map47.setImage(containsToImage(contains[47]));
+		map48.setImage(containsToImage(contains[48]));
+		map49.setImage(containsToImage(contains[49]));
+
+		map50.setImage(containsToImage(contains[50]));
+		map51.setImage(containsToImage(contains[51]));
+		map52.setImage(containsToImage(contains[52]));
+		map53.setImage(containsToImage(contains[53]));
+		map54.setImage(containsToImage(contains[54]));
+		map55.setImage(containsToImage(contains[55]));
+		map56.setImage(containsToImage(contains[56]));
+		map57.setImage(containsToImage(contains[57]));
+		map58.setImage(containsToImage(contains[58]));
+		map59.setImage(containsToImage(contains[59]));
+
+		map60.setImage(containsToImage(contains[60]));
+		map61.setImage(containsToImage(contains[61]));
+		map62.setImage(containsToImage(contains[62]));
+		map63.setImage(containsToImage(contains[63]));
+		map64.setImage(containsToImage(contains[64]));
+		map65.setImage(containsToImage(contains[65]));
+		map66.setImage(containsToImage(contains[66]));
+		map67.setImage(containsToImage(contains[67]));
+		map68.setImage(containsToImage(contains[68]));
+		map69.setImage(containsToImage(contains[69]));
+
+		map70.setImage(containsToImage(contains[70]));
+		map71.setImage(containsToImage(contains[71]));
+		map72.setImage(containsToImage(contains[72]));
+		map73.setImage(containsToImage(contains[73]));
+		map74.setImage(containsToImage(contains[74]));
+		map75.setImage(containsToImage(contains[75]));
+		map76.setImage(containsToImage(contains[76]));
+		map77.setImage(containsToImage(contains[77]));
+		map78.setImage(containsToImage(contains[78]));
+		map79.setImage(containsToImage(contains[79]));
+
+		map80.setImage(containsToImage(contains[80]));
+		map81.setImage(containsToImage(contains[81]));
+		map82.setImage(containsToImage(contains[82]));
+		map83.setImage(containsToImage(contains[83]));
+		map84.setImage(containsToImage(contains[84]));
+		map85.setImage(containsToImage(contains[85]));
+		map86.setImage(containsToImage(contains[86]));
+		map87.setImage(containsToImage(contains[87]));
+		map88.setImage(containsToImage(contains[88]));
+		map89.setImage(containsToImage(contains[89]));
+
+		map90.setImage(containsToImage(contains[90]));
+		map91.setImage(containsToImage(contains[91]));
+		map92.setImage(containsToImage(contains[92]));
+		map93.setImage(containsToImage(contains[93]));
+		map94.setImage(containsToImage(contains[94]));
+		map95.setImage(containsToImage(contains[95]));
+		map96.setImage(containsToImage(contains[96]));
+		map97.setImage(containsToImage(contains[97]));
+		map98.setImage(containsToImage(contains[98]));
+		map99.setImage(containsToImage(contains[99]));
+
+
+
+
+
+
+	}
+
+	/**
+	 * containsの中身を見て、必要なImageオブジェクトで返す(drawMap補助
+	 */
+	private Image containsToImage(Contains contains) {
+		switch(contains.getType()) {
+		case HOME:
+			return  new Image(ContainsTypes.HOME.getPath());
+		case STATION:
+			return new Image(ContainsTypes.STATION.getPath());
+		case STORE:
+			return new Image(ContainsTypes.STORE.getPath());
+		case PATH:
+		default:
+			return new Image(ContainsTypes.PATH.getPath());
+
+		}
+
 	}
 
 	/**
@@ -234,7 +337,7 @@ public class FormController implements Initializable{
 
 	@FXML
 	public void onReloadClicked(ActionEvent e) {
-
+		
 	}
 
 	/**

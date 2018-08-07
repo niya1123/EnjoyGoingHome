@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author YK
  */
 public class CreateMap {
-	
+
 	/**
 	 * Map生成のクラスメソッド.テスト用.
 	 */
@@ -24,9 +24,9 @@ public class CreateMap {
 		map[1][2] = new Store(0);
 		map[3][4] = new Path(2);
 		return map;
-		
+
 	}
-	
+
 	/**
 	 * Map生成のクラスメソッド.txtファイルから情報を得る.
 	 * @param data txtから読み出されたdata
@@ -40,13 +40,13 @@ public class CreateMap {
 				temp.add(cha);
 			}
 		}
-		
+
 		//ArrayListのtempにちゃんと記号入ってるかチェック
 		for(int i = 0; i < temp.size(); i++) {
 			System.out.print(temp.get(i));
 			if(i%10 == 9) System.out.println();
 		}
-		
+
 		//map[][]にアルファベットに対応したオブジェクトを生成, 代入
 		int k=0;
 		for(int i=0; i<10; i++){
@@ -62,7 +62,7 @@ public class CreateMap {
 				k++;
 			}
 		}
-		
+
 		return map;
 	}
 }

@@ -11,7 +11,7 @@ public enum ContainsTypes {
 	 */
 
 	HOME("pic/home.png"),
-	PATH("pic/path.jpg"),
+	PATH("pic/path.png"),
 	STATION("pic/station.jpg"),
 	STORE("pic/store.png");
 

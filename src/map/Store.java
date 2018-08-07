@@ -19,14 +19,4 @@ public class Store extends Contains{
 	public void showInfo() {
 		System.out.print("店 ");
 	}
-
-	@Override
-	public boolean isDetour() {
-		return detour;
-	}
-
-	@Override
-	public void setDetour(boolean flg) {
-		this.detour  = flg;
-	}
 }

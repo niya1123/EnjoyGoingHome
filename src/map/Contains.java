@@ -55,12 +55,15 @@ public abstract class Contains {
 	 * 寄り道するかどうか判断するもの.
 	 * @return 寄り道するか否か.
 	 */
-	public abstract boolean isDetour();
+	public boolean isDetour() {
+		return detour;
+	}
 
 	/**
 	 * 寄り道のセッター
 	 * @param flg
 	 */
+<<<<<<< HEAD
 	public abstract void setDetour(boolean flg);
 
 	/**
@@ -68,5 +71,9 @@ public abstract class Contains {
 	 */
 	public String getPath() {
 		return type.getPath();
+=======
+	public void setDetour(boolean flg) {
+		this.detour = flg;
+>>>>>>> f642dc97f79139a86d2227a68d90f44ae7c62b13
 	}
 }

@@ -21,15 +21,4 @@ public class Home extends Contains{
 		System.out.print("家 ");
 	}
 
-	@Override
-	public boolean isDetour() {
-		return detour;
-	}
-
-	@Override
-	public void setDetour(boolean flg) {
-		this.detour = flg;
-
-	}
-
 }

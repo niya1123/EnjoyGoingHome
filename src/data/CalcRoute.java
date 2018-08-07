@@ -2,8 +2,6 @@ package data;
 
 import java.util.ArrayList;
 
-import com.sun.corba.se.impl.orbutil.graph.Node;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 import data.SaveData;
 import map.Contains;
@@ -46,8 +44,8 @@ public class CalcRoute {
 	 * @return 新たに順序を代入した２次元配列を返す
 	 * @author obata
 	 */
-	public Contains[][] calcRoute(ArrayList<String> data) {
-		Contains[][] esc = saveData.getCreateMap(data);
+	public Contains[][] calcRoute(Contains[][] esc) {
+//		Contains[][] esc = saveData.getCreateMap(data);
 		
 		//通り道の数(isDetourの数)
 		int count=0;
@@ -100,7 +98,6 @@ public class CalcRoute {
 	 * @param bY    ２つ目のノードのi
 	 */
 	public int calcRange(int aY, int aX, int bY, int bX){
-		
-		return 0;
+		return Math.abs(aY-bY) + Math.abs(aX-bX);
 	}
 }

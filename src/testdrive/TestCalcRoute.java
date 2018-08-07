@@ -47,7 +47,8 @@ public class TestCalcRoute {
 		System.out.println("かるくルートするまえ---------------<");
 		for(int i = 0; i < esc.length; i++) {
 			for(int j = 0; j < esc[i].length; j++) {
-				System.out.printf("|%2d", esc[i][j].getOrder());
+				if (esc[i][j].isDetour()) System.out.printf("|%3d", 1);
+				else System.out.printf("|%3d", esc[i][j].getOrder());
 				if( j == 9 ) System.out.println("|");
 			}
 		}
@@ -60,8 +61,6 @@ public class TestCalcRoute {
 				System.out.printf("|%3d", esc[i][j].getOrder());
 				if( j == 9 ) System.out.println("|");
 			}
-		}
-		
+		}	
 	}
-
 }

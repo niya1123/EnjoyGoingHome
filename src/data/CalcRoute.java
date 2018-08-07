@@ -2,7 +2,6 @@ package data;
 
 import java.util.ArrayList;
 
-import com.sun.java.swing.plaf.gtk.resources.gtk_it;
 
 import data.SaveData;
 import map.Contains;
@@ -60,33 +59,35 @@ public class CalcRoute {
 		//始点の座標
 		int startY=0;
 		int startX=0;
-		//距離の最大値
-		int range=0;
+		//距離の最小値
+		int range=1000000;
 		
 		//初期位置
-		esc[startY][startX].setOrder(1);
+		esc[0][0].setOrder(1);
+		esc[0][0].setVisited(true);
 		
 		int orderCount=2;
 		
-		
 		//isDetourの数だけループ
 		while(true){
-			
+			range=1000000;
 			for(int i=0; i<esc.length; i++){
 				for(int j=0; j<esc[i].length; j++){
-					if(esc[i][j].isDetour() && !esc[i][j].getVisited()){
-						if( range < calcRange(startY, startX, i, j) ){
+					
+					//isDetourのところでまだ訪問してないところを探索
+					if(esc[i][j].isDetour() == true && esc[i][j].getVisited()== false){
+						if( range > calcRange(startY, startX, i, j) ){
 							range = calcRange(startY, startX, i, j);
 							startY = i;
 							startX = j;
 						}
 					}
-					esc[startY][startX].setOrder(orderCount);
-					esc[startY][startX].setVisited(true);
+					
 				}
 			}
+			esc[startY][startX].setOrder(orderCount);
+			esc[startY][startX].setVisited(true);
 			
-//			System.out.println(orderCount);
 			orderCount++;
 			
 			

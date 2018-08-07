@@ -13,6 +13,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import map.Contains;
+import map.ContainsTypes;
 import map.CreateMap;
 /**
  * GUI処理部
@@ -164,9 +165,10 @@ public class FormController implements Initializable{
 	public void drawMap(Contains[][] map) {
 		for(int i= 0; i< map.length; i++) {
 			for(int j= 0; j< map[i].length; j++) {
-				Image image= new Image(getClass().getResourceAsStream(map[i][j].getPath()));
-				mapImages[i][j].setImage(image);
-
+				 //Image image= new Image(getClass().getResourceAsStream(map[i][j].getPath()));
+				Image image = new Image(ContainsTypes.class.getSimpleName().getClass().getResourceAsStream(map[i][j].getPath()));
+				mapImages[i][j]= new ImageView(image);
+				System.out.println("map["+i+"]["+j+"] is set");
 
 			}
 		}

@@ -2,6 +2,7 @@ package testdrive;
 
 import data.ReadMap;
 import map.Contains;
+import map.ContainsTypes;
 import map.CreateMap;
 
 public class TestContainsType {
@@ -12,7 +13,7 @@ public class TestContainsType {
 
 		for(int i= 0; i< 10; i++) {
 			for(int j= 0; j< 10; j++) {
-			System.out.print(map[i][j].getPath()+ ": ");
+			System.out.print(ContainsTypes.class.getSimpleName().getClass().getResourceAsStream(map[i][j].getPath())+ ": ");
 			}
 			System.out.println();
 		}

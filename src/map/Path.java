@@ -21,15 +21,4 @@ public class Path extends Contains{
 	public void showInfo() {
 		System.out.print("道 ");
 	}
-
-	@Override
-	public boolean isDetour() {
-		return detour;
-	}
-
-	@Override
-	public void setDetour(boolean flg) {
-		this.detour = flg;
-	}
-
 }

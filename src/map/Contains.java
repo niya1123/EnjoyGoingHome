@@ -55,11 +55,15 @@ public abstract class Contains {
 	 * 寄り道するかどうか判断するもの.
 	 * @return 寄り道するか否か.
 	 */
-	public abstract boolean isDetour();
+	public boolean isDetour() {
+		return detour;
+	}
 
 	/**
 	 * 寄り道のセッター
 	 * @param flg
 	 */
-	public abstract void setDetour(boolean flg);
+	public void setDetour(boolean flg) {
+		this.detour = flg;
+	}
 }

@@ -19,14 +19,4 @@ public class Station extends Contains{
 	public void showInfo() {
 		System.out.print("駅 ");
 	}
-
-	@Override
-	public boolean isDetour() {
-		return detour;
-	}
-
-	public void setDetour(boolean flg) {
-		this.detour = flg;
-	}
-
 }

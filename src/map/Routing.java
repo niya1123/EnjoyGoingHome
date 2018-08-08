@@ -53,19 +53,19 @@ public class Routing {
 	 * @return
 	 */
 	public String toImagePath() {
-		if(north && !east && !west && south)return "/picRoute/path01";//NS
-		else if(north && !east && west && !south)return "02";//NW
-		else if(north && east && !west && !south)return "03";//NE
-		else if(!north && east && west && !south)return "04";//EW
-		else if(!north && !east && west && south)return "05";//WS
-		else if(!north && east && !west && south)return "06";//ES
-		else if(north && east && west && south)return "07";//NEWS
-		else if(north && !east && west && south)return "08";//NWS
-		else if(north && east && !west && south)return "09";//NES
-		else if(north && east && west && !south)return "10";//NEW
-		else if(!north && east && west && south)return "11";//EWS
+		if(north && !east && !west && south)return "/picRoute/path01.png";//NS
+		else if(north && !east && west && !south)return "/picRoute/path02.png";//NW
+		else if(north && east && !west && !south)return "/picRoute/path03.png";//NE
+		else if(!north && east && west && !south)return "/picRoute/path04.png";//EW
+		else if(!north && !east && west && south)return "/picRoute/path05.png";//WS
+		else if(!north && east && !west && south)return "/picRoute/path06.png";//ES
+		else if(north && east && west && south)return "/picRoute/path07.png";//NEWS
+		else if(north && !east && west && south)return "/picRoute/path08.png";//NWS
+		else if(north && east && !west && south)return "/picRoute/path09.png";//NES
+		else if(north && east && west && !south)return "/picRoute/path10.png";//NEW
+		else if(!north && east && west && south)return "/picRoute/path11.png";//EWS
 
-		else {return "00";}
+		else {return "/picRoute/path00.png";}
 		}
 
 	/**
@@ -229,14 +229,14 @@ public class Routing {
 				for(int j= 0; j< contains[i].length; j++) {
 //					次の目的地
 					if(contains[i][j].getOrder()== o) {
-//						横移動(iやsaveXは変えない)
-						if(saveX<= j) {	//右移動
+//						横移動(iやsaveYは変えない)
+						if(saveX< j) {	//右移動
 							moveRight= true;
 							for(int k= ++saveX; k< j; k++) {
 								contains[saveY][k].getRouting().through(2, 3);
 							}
 						}
-						else {//左移動
+						else if(saveX> j){//左移動
 							moveRight= false;
 							for(int k= --saveX; k> j; k--) {
 								contains[saveY][k].getRouting().through(3, 2);
@@ -244,14 +244,14 @@ public class Routing {
 						}
 
 //						横移動後のContains[saveY][j]のL字の処理
-						if(saveY<= i) {//下移動
+						if(saveY< i) {//下移動
 							moveDown= true;
 
 							if(moveRight) {//右移動
-								contains[saveY][i].getRouting().through(3, 4);//左から来て下へ
+								contains[saveY][j].getRouting().through(3, 4);//左から来て下へ
 							}
 							else {//左移動
-								contains[saveY][i].getRouting().through(2, 4);//右から来て下へ
+								contains[saveY][j].getRouting().through(2, 4);//右から来て下へ
 							}
 
 							for(int k=  ++saveY; k< i; k++) {
@@ -263,14 +263,14 @@ public class Routing {
 							moveDown= false;
 
 							if(moveRight) {//右移動
-								contains[saveY][i].getRouting().through(3, 1);//左から来て上へ
+								contains[saveY][j].getRouting().through(3, 1);//左から来て上へ
 							}
 							else {//左移動
-								contains[saveY][i].getRouting().through(2, 1);//右から来て上へ
+								contains[saveY][j].getRouting().through(2, 1);//右から来て上へ
 							}
 
 							for(int k=  --saveY; k> i; k--) {
-								contains[k][i].getRouting().through(4, 1);
+								contains[k][j].getRouting().through(4, 1);
 							}
 						}
 					saveY= i;

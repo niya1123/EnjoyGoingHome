@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import map.Contains;
 import map.ContainsTypes;
 import map.CreateMap;
+import map.Routing;
 /**
  * GUI処理部
  * MAP生成や検索条件のオンオフを管理
@@ -201,7 +202,7 @@ public class FormController implements Initializable{
 		/**
 		 * 100個のImageViewを一つひとつ更新。もっと他に良い手段はなかったのだろうか...
 		 */
-		map00.setImage(containsToImage(contains[0]));
+		map00.setImage(new Image("pic/start.png"));
 		map01.setImage(containsToImage(contains[1]));
 		map02.setImage(containsToImage(contains[2]));
 		map03.setImage(containsToImage(contains[3]));
@@ -330,7 +331,7 @@ public class FormController implements Initializable{
 		case STORE:
 			return new Image(ContainsTypes.STORE.getPath());
 		case PATH:
-			return new Image(ContainsTypes.PATH.getPath());
+			return new Image(contains.getRouting().toImagePath());
 		case HOME_C:
 			return new Image(ContainsTypes.HOME_C.getPath());
 		case STATION_C:
@@ -361,14 +362,14 @@ public class FormController implements Initializable{
 	public void onSearchClicked(ActionEvent e){
 		Contains[][] ret= Contains.setDetourSS(CreateMap.createmap(ReadMap.readMap(currentNum)),
 				checkStation.isSelected(), checkStore.isSelected());
-		
-	
-	
-	
-	drawMap(ret);
+
+
+
+
+	drawMap(Routing.makeRoute_Kei(CalcRoute.calcRoute(ret)));
 	}
-	
-	
+
+
 
 	/**
 	 * マップの種類をせんたくするラジオボタンの処理メソッド

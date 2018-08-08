@@ -155,6 +155,7 @@ public class FormController implements Initializable{
 
 
 	@FXML private Button button_reload;
+	@FXML private Button button_serach;
 
 	@FXML private RadioButton radio_map1;
 	@FXML private RadioButton radio_map2;
@@ -341,6 +342,11 @@ public class FormController implements Initializable{
 	@FXML
 	public void onReloadClicked(ActionEvent e) {
 		drawMap(CreateMap.createmap(ReadMap.readMap(currentNum)));
+	}
+
+	@FXML
+	public void onSearchClicked(ActionEvent e){
+
 	}
 
 	/**

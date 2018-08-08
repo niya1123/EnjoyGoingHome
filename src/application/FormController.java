@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -165,6 +166,9 @@ public class FormController implements Initializable{
 	@FXML private RadioButton radio_map6;
 
 	@FXML private ToggleGroup mapSelection;
+
+	@FXML private CheckBox checkStation;
+	@FXML private CheckBox checkStore;
 
 
 	/**
@@ -325,6 +329,13 @@ public class FormController implements Initializable{
 		case STORE:
 			return new Image(ContainsTypes.STORE.getPath());
 		case PATH:
+			return new Image(ContainsTypes.PATH.getPath());
+		case HOME_C:
+			return new Image(ContainsTypes.HOME_C.getPath());
+		case STATION_C:
+			return new Image(ContainsTypes.STATION_C.getPath());
+		case STORE_C:
+			return new Image(ContainsTypes.STORE_C.getPath());
 		default:
 			return new Image(ContainsTypes.PATH.getPath());
 
@@ -346,7 +357,8 @@ public class FormController implements Initializable{
 
 	@FXML
 	public void onSearchClicked(ActionEvent e){
-
+		drawMap(Contains.setDetourSS(CreateMap.createmap(ReadMap.readMap(currentNum)),
+				checkStation.isSelected(), checkStore.isSelected()));
 	}
 
 	/**

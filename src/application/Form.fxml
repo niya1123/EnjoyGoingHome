@@ -146,8 +146,8 @@
                <children>
                   <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="95.0" prefWidth="100.0" spacing="5.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="店" />
-                        <CheckBox mnemonicParsing="false" text="駅" />
+                        <CheckBox fx:id="checkStore" mnemonicParsing="false" text="店" />
+                        <CheckBox fx:id="checkStation" mnemonicParsing="false" text="駅" />
                         <!-- <CheckBox mnemonicParsing="false" text="検索要素3" />
                         <CheckBox mnemonicParsing="false" text="検索要素4" /> -->
                      </children>
@@ -191,7 +191,7 @@
          <top>
             <GridPane prefHeight="59.0" prefWidth="772.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="button_serach" layoutX="100.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onSerachClicked" text="Button" GridPane.columnIndex="1" />
+                  <Button fx:id="button_serach" layoutX="100.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onSearchClicked" text="SEARCH" GridPane.columnIndex="1" />
                   <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="480.0">
                      <opaqueInsets>
                         <Insets />

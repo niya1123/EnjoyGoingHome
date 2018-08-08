@@ -125,4 +125,33 @@ public abstract class Contains {
 	public ContainsTypes getType() {
 		return type;
 	}
+
+	public void setType(ContainsTypes type) {
+		this.type= type;
+	}
+
+	/**
+	 * detourのまとめてセッター
+	 * ２つめの引数のbooleanがtrueならStationのdetourをtrueに。
+	 * 3つめの引数のbooleanがtrueならStoreのdetourをtrueに。
+	 */
+	public static Contains[][] setDetourSS(Contains[][] contains, boolean checkStation, boolean checkStore){
+//		10*10の２次元配列というぜんていで記入
+
+		for(int i= 0; i< 10; i++) {
+			for(int j= 0; j< 10; j++) {
+//				駅のチェック
+				if(contains[i][j].type.equals(ContainsTypes.STATION) && checkStation) {
+					contains[i][j].setType(ContainsTypes.STATION_C);
+				}
+
+//				店のチェック
+				else if(contains[i][j].type.equals(ContainsTypes.STORE) && checkStore) {
+					contains[i][j].setType(ContainsTypes.STORE_C);
+				}
+			}
+		}
+
+		return contains;
+	}
 }

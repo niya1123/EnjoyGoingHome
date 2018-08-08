@@ -45,7 +45,7 @@ public class CalcRoute {
 	 * @return 新たに順序を代入した２次元配列を返す
 	 * @author obata
 	 */
-	public Contains[][] calcRoute(Contains[][] esc) {
+	public static Contains[][] calcRoute(Contains[][] esc) {
 //		Contains[][] esc = saveData.getCreateMap(data);
 		
 		//通り道の数(isDetourの数)
@@ -113,7 +113,7 @@ public class CalcRoute {
 	 * @param bX  ２つ目のノードのj
 	 * @param bY    ２つ目のノードのi
 	 */
-	public int calcRange(int aY, int aX, int bY, int bX){
+	public static int calcRange(int aY, int aX, int bY, int bX){
 		return Math.abs(aY-bY) + Math.abs(aX-bX);
 	}
 }

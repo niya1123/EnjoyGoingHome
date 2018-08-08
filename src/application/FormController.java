@@ -3,6 +3,7 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import data.CalcRoute;
 import data.ReadMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -347,7 +348,8 @@ public class FormController implements Initializable{
 	 * 経路表示のためのマップ更新メソッド
 	 */
 	public void drawRoute() {
-
+		drawMap(CalcRoute.calcRoute(Contains.setDetourSS(CreateMap.createmap(ReadMap.readMap(currentNum)),
+				checkStation.isSelected(), checkStore.isSelected())));
 	}
 
 	@FXML

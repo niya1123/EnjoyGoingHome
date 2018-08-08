@@ -142,11 +142,13 @@ public abstract class Contains {
 			for(int j= 0; j< 10; j++) {
 //				駅のチェック
 				if(contains[i][j].type.equals(ContainsTypes.STATION) && checkStation) {
+					contains[i][j].setDetour(checkStation);
 					contains[i][j].setType(ContainsTypes.STATION_C);
 				}
 
 //				店のチェック
 				else if(contains[i][j].type.equals(ContainsTypes.STORE) && checkStore) {
+					contains[i][j].setDetour(checkStore);
 					contains[i][j].setType(ContainsTypes.STORE_C);
 				}
 			}

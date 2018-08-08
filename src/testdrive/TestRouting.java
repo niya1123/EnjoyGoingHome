@@ -14,7 +14,7 @@ import map.Store;
 public class TestRouting {
 
 	public static void main(String[] args) {
-		Contains[][] esc = CreateMap.createmap(ReadMap.readMap("1"));
+		Contains[][] esc = CreateMap.createmap(ReadMap.readMap("6"));
 		ArrayList<Boolean> isDetour = new ArrayList<>();
 		for(int i = 0; i < esc.length; i++) {
 			for(int j = 0; j < esc[i].length; j++) {
@@ -24,7 +24,7 @@ public class TestRouting {
 			}
 		}
 		CalcRoute calcRoute = new CalcRoute();
-		esc = calcRoute.setDetour(ReadMap.readMap("1"), isDetour, isDetour);
+		esc = calcRoute.setDetour(ReadMap.readMap("6"), isDetour, isDetour);
 		esc = CalcRoute.calcRoute(esc);
 		esc = Routing.makeRoute(esc);
 		for(int i = 0; i < esc.length; i++) {

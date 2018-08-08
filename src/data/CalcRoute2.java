@@ -9,11 +9,11 @@ import map.Home;
 import map.Station;
 import map.Store;
 
-public class CalcRoute {
+public class CalcRoute2 {
 	
 	protected SaveData saveData;
 	
-	public CalcRoute() {
+	public CalcRoute2() {
 		this.saveData = new SaveData();
 	}
 	
@@ -45,9 +45,7 @@ public class CalcRoute {
 	 * @return 新たに順序を代入した２次元配列を返す
 	 * @author obata
 	 */
-	public Contains[][] calcRoute(Contains[][] esc) {
-//		Contains[][] esc = saveData.getCreateMap(data);
-		
+	public Contains[][] calcRoute(Contains[][] esc) {		
 		//通り道の数(isDetourの数)
 		int count=0;
 		for(int i=0; i<esc.length; i++){
@@ -67,33 +65,29 @@ public class CalcRoute {
 		esc[0][0].setVisited(true);
 		
 		int orderCount=2;
-		//isDetourの数だけループ
-		while(true){
-			range=1000000;
-			for(int i=0; i<esc.length; i++){
-				for(int j=0; j<esc[i].length; j++){
-					
-					//isDetourのところでまだ訪問してないところを探索
-					if(esc[i][j].isDetour() == true && esc[i][j].getVisited()== false){
-						if( range > calcRange(startY, startX, i, j) ){
-							range = calcRange(startY, startX, i, j);
-							startY = i;
-							startX = j;
+		
+		while(true) {
+			range = 1000000;
+			for(int i = 0; i < esc.length; i++) {
+				for(int j = 0; j < esc[i].length; j++) {
+					if(!esc[i][j].getVisited()) {
+						if(esc[i][j].isDetour()) {
+							if(range > calcRange(startY, startX, i, j)) {
+								range = calcRange(startY, startX, i ,j);
+								startY = i;
+								startX = j;
+								esc[startY][startX].setOrder(orderCount);
+								orderCount++;
+							}
 						}
+						esc[startY][startX].setVisited(true);
 					}
-					
 				}
 			}
-			esc[startY][startX].setOrder(orderCount);
-			esc[startY][startX].setVisited(true);
-			
-			orderCount++;
-			
 			count--;
 			if(count<=0) break;
 		}
 		
-		//家に最後のorderを設定
 		for(int i=0; i<esc.length; i++){
 			for(int j=0; j<esc[i].length; j++){
 				if(esc[i][j] instanceof Home){

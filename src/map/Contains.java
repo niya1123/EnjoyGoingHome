@@ -37,12 +37,18 @@ public abstract class Contains {
 	protected boolean isVisited;
 
 	/**
+	 * ルート描画用
+	 */
+	protected Routing routing;
+
+	/**
 	 * 家,道,店,駅はコンストラクタの引数に渡される数によって優先度が決まる.
 	 * @param nodePoint 優先度のための数
 	 */
 	public Contains(int nodePoint) {
 		this.nodePoint = nodePoint;
 		this.order = 0;
+		routing= new Routing();
 	}
 
 	/**
@@ -129,6 +135,10 @@ public abstract class Contains {
 
 	public void setType(ContainsTypes type) {
 		this.type= type;
+	}
+
+	public Routing getRouting() {
+		return routing;
 	}
 
 	/**

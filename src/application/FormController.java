@@ -359,9 +359,16 @@ public class FormController implements Initializable{
 
 	@FXML
 	public void onSearchClicked(ActionEvent e){
-		drawMap(Contains.setDetourSS(CreateMap.createmap(ReadMap.readMap(currentNum)),
-				checkStation.isSelected(), checkStore.isSelected()));
+		Contains[][] ret= Contains.setDetourSS(CreateMap.createmap(ReadMap.readMap(currentNum)),
+				checkStation.isSelected(), checkStore.isSelected());
+		
+	
+	
+	
+	drawMap(ret);
 	}
+	
+	
 
 	/**
 	 * マップの種類をせんたくするラジオボタンの処理メソッド

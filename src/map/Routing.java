@@ -5,7 +5,7 @@ package map;
  * @author kei
  *
  */
-public class FromTo {
+public class Routing {
 
 	/**
 	 * 東西南北のどれを通過に利用されたか
@@ -19,7 +19,7 @@ public class FromTo {
 	private boolean south;
 
 
-	public FromTo() {
+	public Routing() {
 		// TODO 自動生成されたコンストラクター・スタブ
 		this.north= false;
 		this.east= false;

@@ -71,11 +71,65 @@ public class Routing {
 	 * @return
 	 */
 	public static Contains[][] makeRoute(Contains[][] contains){
-
+		int maxOrder = 0;
+		for(int i = 0; i < contains.length; i++) {
+			for(int j = 0; j < contains[i].length; j++) {
+				if(contains[i][j].getOrder() > maxOrder) {
+					maxOrder = contains[i][j].getOrder();
+				}
+			}
+		}
+		
+		int saveX = 0; 
+		int saveY = 0;
+		int north = 0, east = 0, west = 0, south = 0; 
+		Contains esc = null;
+		for(int i = 2; i <= maxOrder; i++) {
+			for(int j = 0; j < contains.length; j++) {
+				for(int k = 0; k < contains[j].length; k++) {
+					if(contains[j][k].getOrder() == i) {
+						esc = contains[j][k];
+						saveX = k;
+						saveY = j;
+					}
+				}
+			}
+			if(east < saveX || east > saveX) {
+				esc.getRouting().through(west, 2);
+				east = saveX;
+			}
+			if(west < saveX || west > saveX) {
+				esc.getRouting().through(east, 3);
+				west = saveX;
+			}
+			if(north < saveY || north > saveY) {
+				esc.getRouting().through(south, 1);
+				north = saveY;
+			}
+			if(south < saveY || south > saveY) {
+				esc.getRouting().through(north, 4);
+				south = saveY;
+			}
+			
+		}
 
 		return contains;
 	}
-
-
+	
+	public boolean isWest() {
+		return west;
+	}
+	
+	public boolean isSouth() {
+		return south;
+	}
+	
+	public boolean isNorth() {
+		return north;
+	}
+	
+	public boolean isEast() {
+		return east;
+	}
 
 }

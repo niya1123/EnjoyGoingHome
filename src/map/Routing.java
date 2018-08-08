@@ -50,7 +50,7 @@ public class Routing {
 	 * @return
 	 */
 	public String toImagePath() {
-		if(north && !east && !west && south)return "01";//NS
+		if(north && !east && !west && south)return "/picRoute/path01";//NS
 		else if(north && !east && west && !south)return "02";//NW
 		else if(north && east && !west && !south)return "03";//NE
 		else if(!north && east && west && !south)return "04";//EW
@@ -70,9 +70,82 @@ public class Routing {
 	 * @param contains
 	 * @return
 	 */
-	public static Contains[][] makeRoute(Contains[][] contains){
+	public static Contains[][] makeRoute_Kei(Contains[][] contains){
+		int saveX= 0, saveY= 0, maxOrder= 0;
+
+//		左右上下の直前までの移動方向の確認
+		boolean moveRight= true;
+		boolean moveDown= true;
 
 
+
+//		Orderの最大値の算出
+		for(int i= 0; i< contains.length;i++) {
+			for(int j=0; j< contains[i].length; j++) {
+				if(contains[i][j].getOrder()> maxOrder) {
+					maxOrder= contains[i][j].getOrder();
+				}
+			}
+		}
+
+//		Order最大値までのあいだ
+		for(int o= 2; o<= maxOrder; o++) {
+
+			for(int i= 0; i< contains.length; i++) {
+				for(int j= 0; j< contains[i].length; j++) {
+//					次の目的地
+					if(contains[i][j].getOrder()== o) {
+//						横移動(iやsaveXは変えない)
+						if(saveX<= j) {	//右移動
+							moveRight= true;
+							for(int k= ++saveX; k< j; k++) {
+								contains[saveY][k].getRouting().through(2, 3);
+							}
+						}
+						else {//左移動
+							moveRight= false;
+							for(int k= --saveX; k> j; k--) {
+								contains[saveY][k].getRouting().through(3, 2);
+							}
+						}
+
+//						横移動後のContains[saveY][j]のL字の処理
+						if(saveY<= i) {//下移動
+							moveDown= true;
+
+							if(moveRight) {//右移動
+								contains[saveY][i].getRouting().through(3, 4);//左から来て下へ
+							}
+							else {//左移動
+								contains[saveY][i].getRouting().through(2, 4);//右から来て下へ
+							}
+
+							for(int k=  ++saveY; k< i; k++) {
+								contains[k][i].getRouting().through(1, 4);
+							}
+
+						}
+						else {//上移動
+							moveDown= false;
+
+							if(moveRight) {//右移動
+								contains[saveY][i].getRouting().through(3, 1);//左から来て上へ
+							}
+							else {//左移動
+								contains[saveY][i].getRouting().through(2, 1);//右から来て上へ
+							}
+
+							for(int k=  --saveY; k> i; k--) {
+								contains[k][i].getRouting().through(4, 1);
+							}
+						}
+					saveY= i;
+					saveX= j;
+					}
+				}
+			}
+
+		}
 		return contains;
 	}
 

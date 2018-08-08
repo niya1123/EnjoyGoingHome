@@ -6,7 +6,7 @@ import data.CalcRoute;
 import data.ReadMap;
 import map.Contains;
 import map.CreateMap;
-import map.Path;
+//import map.Path;
 import map.Routing;
 import map.Station;
 import map.Store;
@@ -30,8 +30,8 @@ public class TestRouting {
 		for(int i = 0; i < esc.length; i++) {
 			for(int j = 0; j < esc[i].length; j++) {
 				esc[i][j].showInfo();
-				if(esc[i][j] instanceof Path) {
-					System.out.print("p");
+//				if(esc[i][j] instanceof Path) {
+//					System.out.print("p");
 					if(esc[i][j].getRouting().isWest()) {
 						System.out.print("w");
 					}
@@ -45,7 +45,7 @@ public class TestRouting {
 						System.out.print("e");
 					}
 					
-				}
+//				}
 				if( j == 9 ) System.out.println();
 			}
 		}

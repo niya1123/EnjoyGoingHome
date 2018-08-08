@@ -81,17 +81,17 @@ public class Routing {
 		}
 		
 		int saveX = 0, saveY = 0;
-		for(int i = 2; i <= maxOrder; i++) {
+		for(int i = 0; i <= maxOrder; i++) {
 			for(int j = 0; j < contains.length; j++) {
 				for(int k = 0; k < contains[j].length; k++) {
 					if(contains[j][k].getOrder() == i) {
 						//右移動
 						if(saveX <= k) {
-							for(int l = ++saveY; l < k; l++) {
+							for(int l = ++saveX; l < k; l++) {
 								contains[j][l].getRouting().through(2, 3);
 							}
 						}else {
-							for(int l = --saveY; l > k; l--) {
+							for(int l = --saveX; l > k; l--) {
 								contains[j][l].getRouting().through(3, 2);
 							}
 						}

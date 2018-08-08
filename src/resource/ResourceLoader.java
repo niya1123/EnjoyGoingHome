@@ -33,4 +33,8 @@ public class ResourceLoader {
 	public InputStream getResourceStreamStore() {
 		return singleton.getClass().getResourceAsStream(ContainsTypes.STORE.getPath());
 	}
+	
+	public InputStream getResourceMap(String name) {
+		return singleton.getClass().getResourceAsStream("../data/"+ "map"+ name+ ".txt");
+	}
 }

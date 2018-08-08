@@ -26,7 +26,7 @@ public class TestRouting {
 		CalcRoute calcRoute = new CalcRoute();
 		esc = calcRoute.setDetour(ReadMap.readMap("1"), isDetour, isDetour);
 		esc = CalcRoute.calcRoute(esc);
-		esc = Routing.makeRoute(esc);
+		esc = Routing.makeRoute_Kei(esc);
 		for(int i = 0; i < esc.length; i++) {
 			for(int j = 0; j < esc[i].length; j++) {
 				esc[i][j].showInfo();

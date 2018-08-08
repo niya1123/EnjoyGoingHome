@@ -152,15 +152,17 @@ public abstract class Contains {
 		for(int i= 0; i< 10; i++) {
 			for(int j= 0; j< 10; j++) {
 //				駅のチェック
-				if(contains[i][j].type.equals(ContainsTypes.STATION) && checkStation) {
+				if(contains[i][j] instanceof Station && checkStation) {
 					contains[i][j].setDetour(checkStation);
 					contains[i][j].setType(ContainsTypes.STATION_C);
+					contains[i][j].setDetour(true);
 				}
 
 //				店のチェック
-				else if(contains[i][j].type.equals(ContainsTypes.STORE) && checkStore) {
+				else if(contains[i][j] instanceof Store && checkStore) {
 					contains[i][j].setDetour(checkStore);
 					contains[i][j].setType(ContainsTypes.STORE_C);
+					contains[i][j].setDetour(true);
 				}
 			}
 		}

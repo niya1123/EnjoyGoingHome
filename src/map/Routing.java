@@ -190,8 +190,24 @@ public class Routing {
 		}
 
 		return contains;
+		
+		
 	}
 
-
+	public boolean isWest() {
+		return west;
+	}
+	
+	public boolean isSouth() {
+		return south;
+	}
+	
+	public boolean isNorth() {
+		return north;
+	}
+	
+	public boolean isEast() {
+		return east;
+	}
 
 }

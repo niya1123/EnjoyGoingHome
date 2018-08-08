@@ -13,7 +13,12 @@ public enum ContainsTypes {
 	HOME("pic/home.png"),
 	PATH("pic/path.png"),
 	STATION("pic/station.jpg"),
-	STORE("pic/store.png");
+	STORE("pic/store.png"),
+
+	HOME_C("pic/homeChecked.png"),
+	STATION_C("pic/stationChecked.png"),
+	STORE_C("pic/storeChecked.png");
+
 
 	private String path;
 

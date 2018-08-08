@@ -63,8 +63,17 @@ public class Routing {
 		else if(!north && east && west && south)return "11";//EWS
 
 		else {return "00";}
+		}
+
+	/**
+	 * Containsの中のOrderから、ルート作成をし、同時にフィールドの更新をする
+	 * @param contains
+	 * @return
+	 */
+	public static Contains[][] makeRoute(Contains[][] contains){
 
 
+		return contains;
 	}
 
 

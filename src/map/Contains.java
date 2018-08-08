@@ -15,6 +15,7 @@ public abstract class Contains {
 	 */
 	protected boolean detour;
 
+
 	/**
 	 * Containsの小クラスの種類判別及び画像描写用
 	 * 具体的な型は、小クラスのコンストラクタで定義

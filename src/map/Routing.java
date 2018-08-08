@@ -1,6 +1,6 @@
 package map;
 
-import com.sun.java.swing.plaf.gtk.resources.gtk_it;
+
 
 /**
  * 道筋のGUI描画の際に利用
@@ -99,12 +99,12 @@ public class Routing {
 		//boolean
 		boolean moveRight=false;
 		boolean moveDown=false;
-		
+
 		// 1→2, 2→3ってずらして処理する
 		while(true){
 			moveRight=false;
 			moveDown=false;
-			
+
 			//orderを探す
 			for(int i = 0; i < contains.length; i++) {
 				for(int j = 0; j < contains[i].length; j++) {
@@ -117,7 +117,7 @@ public class Routing {
 
 			if ( (x2-x1)>=0 ) moveRight=true;
 			if ( (y2-y1)>=0 ) moveDown=true;
-			
+
 			//→↓
 			if ( moveRight && moveDown ) {
 				//→と↓に移動する回数
@@ -255,7 +255,7 @@ public class Routing {
 							}
 
 							for(int k=  ++saveY; k< i; k++) {
-								contains[k][i].getRouting().through(1, 4);
+								contains[k][j].getRouting().through(1, 4);
 							}
 
 						}

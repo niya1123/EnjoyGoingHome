@@ -1,5 +1,6 @@
 package map;
 
+import com.sun.java.swing.plaf.gtk.resources.gtk_it;
 
 /**
  * 道筋のGUI描画の際に利用
@@ -78,7 +79,7 @@ public class Routing {
 		int maxOrder=0;
 		for(int i = 0; i < contains.length; i++) {
 			for(int j = 0; j < contains[i].length; j++) {
-				if(contains[i][j].getOrder() < maxOrder){
+				if(contains[i][j].getOrder() > maxOrder){
 					maxOrder = contains[i][j].getOrder();
 				}
 			}
@@ -95,9 +96,15 @@ public class Routing {
 		int y2=0;
 		int x2=0;
 
+		//boolean
+		boolean moveRight=false;
+		boolean moveDown=false;
+		
 		// 1→2, 2→3ってずらして処理する
-		while(maxOrder>0){
-
+		while(true){
+			moveRight=false;
+			moveDown=false;
+			
 			//orderを探す
 			for(int i = 0; i < contains.length; i++) {
 				for(int j = 0; j < contains[i].length; j++) {
@@ -108,11 +115,14 @@ public class Routing {
 				}
 			}
 
+			if ( (x2-x1)>=0 ) moveRight=true;
+			if ( (y2-y1)>=0 ) moveDown=true;
+			
 			//→↓
-			if ( (x2-x1)>=0 && (y2-y1)>=0 ) {
+			if ( moveRight && moveDown ) {
 				//→と↓に移動する回数
-				int rangeX=Math.abs(x2-x1);//→にrangeX回 3
-				int rangeY=Math.abs(y2-y1)-1;//↓にrangeY回 3
+				int rangeX=Math.abs(x2-x1);//→にrangeX回
+				int rangeY=Math.abs(y2-y1)-1;//↓にrangeY回
 
 				//→
 				for(int i=1; i<=rangeX; i++) {
@@ -127,7 +137,7 @@ public class Routing {
 			}
 
 			//→↑
-			if( (x2-x1)>=0 && (y2-y1)<0 ) {
+			if( moveRight && !moveDown ) {
 				//→と↑に移動する回数
 				int rangeX=Math.abs(x2-x1);//→にrangeX回
 				int rangeY=Math.abs(y2-y1)-1;//↓にrangeY回
@@ -145,7 +155,7 @@ public class Routing {
 			}
 
 			//←↓
-			if( (x2-x1)<0 && (y2-y1)>=0 ){
+			if( !moveRight && moveDown ){
 				//→と↑に移動する回数
 				int rangeX=Math.abs(x2-x1);//→にrangeX回
 				int rangeY=Math.abs(y2-y1)-1;//↓にrangeY回
@@ -163,7 +173,7 @@ public class Routing {
 			}
 
 			//←↑
-			if( (x2-x1)<0 && (y2-y1)<0 ){
+			if( !moveRight && !moveDown ){
 				//→と↑に移動する回数
 				int rangeX=Math.abs(x2-x1);//→にrangeX回
 				int rangeY=Math.abs(y2-y1)-1;//↓にrangeY回
@@ -186,6 +196,7 @@ public class Routing {
 
 			//カウント
 			countOrder++;
+			if (maxOrder<0) break;
 			maxOrder--;
 		}
 		return contains;

@@ -55,7 +55,7 @@ public class TestCalcRoute {
 		
 		
 		System.out.println("calcRouteしたあと---------------<");
-		esc = calcRoute.calcRoute(esc);
+		esc = CalcRoute.calcRoute(esc);
 		for(int i = 0; i < esc.length; i++) {
 			for(int j = 0; j < esc[i].length; j++) {
 				System.out.printf("|%3d", esc[i][j].getOrder());

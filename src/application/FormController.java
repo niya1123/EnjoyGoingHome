@@ -364,8 +364,6 @@ public class FormController implements Initializable{
 				checkStation.isSelected(), checkStore.isSelected());
 
 
-
-
 	drawMap(Routing.makeRoute_Kei(CalcRoute.calcRoute(ret)));
 	}
 

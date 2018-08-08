@@ -161,6 +161,7 @@ public class FormController implements Initializable{
 	@FXML private RadioButton radio_map3;
 	@FXML private RadioButton radio_map4;
 	@FXML private RadioButton radio_map5;
+	@FXML private RadioButton radio_map6;
 
 	@FXML private ToggleGroup mapSelection;
 
@@ -361,6 +362,9 @@ public class FormController implements Initializable{
 		}
 		else if(radio_map5.isSelected()) {
 			currentNum= "5";
+		}
+		else if(radio_map6.isSelected()) {
+			currentNum= "6";
 		}
 
 		System.out.println("Select map: "+ currentNum);
